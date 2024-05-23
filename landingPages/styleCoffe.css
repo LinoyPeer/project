@@ -1,0 +1,86 @@
+/* איפוס ראשוני */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* עיצוב container ראשי לשני הdiv שיצרנו */
+.container {
+    display: flex;
+}
+
+/* עיצוב הכותרת נמצא הקונטיינר .titles-container */
+.titles-container>h1 {
+    font: normal normal 900 43px/63px Heebo;
+    color: #020253;
+}
+
+/* עיצוב הפסקה נמצא הקונטיינר .titles-container */
+.titles-container>p {
+    font: normal normal 900 20px/29px Heebo;
+    color: #020253;
+}
+
+.img-container {
+    width: 60vw;
+}
+
+.img-container>img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    /* התמונה נהיית פורפורציונאלית, הרוחב של הקונטיינר לא התשנה אך הרזולוציה של התמונה תהיה מותאמת למסך */
+    display: block;
+    /* להפתר מהגלילה, באופן דיפולטיבי הדיספליי של תמונה הוא inline-block. כך הכל יהיה בשורה.
+    אם הדיספליי יהיה block הוא יתאים את עצמו להגדרת רוחב שהגדרנו, גם אם לא נשאר לו מקום */
+}
+
+.form-container {
+    width: 40vw;
+    display: flex;
+    /* כדי שיהיה אחד אחרי השני במסודר */
+    flex-direction: column;
+    /* כדי שישב אחד מתחת לשני */
+    justify-content: center;
+    /* בגלל הcolumn המרכוז יהיה אנכי */
+    align-items: center;
+    /* בגלל הcolumn המרכוז יהיה אופקי */
+}
+
+.titles-container {
+    width: 55%;
+    /* 55 אחוזים שהרוחב של האבא שהוא נמצא בתוכו */
+}
+
+.form-control>input {
+    width: 418px;
+    height: 50px;
+    /* אורך ורוחב הועתקו מהאדובX */
+    background-color: #e5eeff 0% 0% no-repeat padding-box;
+    border-bottom: 3px solid #020253;
+    border: 0;
+    /* לבטל מסגרת בשאר הצדדים */
+
+}
+
+.form-control-btn>input {
+    width: 166px;
+    height: 50px;
+    background-color: #020253 0% 0% no-repeat padding-box Heebo;
+}
+
+.form-control>label {}
+
+@media(max-width: 768px) {
+    .container {
+        flex-direction: column-reverse;
+        /* שהתמונה והדיב השני יהיה אחת מתחת לשני */
+        width: 100vw;
+        /* יתפוס 100 אחוז מרוחב המסך הדיפולטיבי */
+    }
+        .img-container>img {
+            width: 100%;
+            height: 33vh;
+        }
+}

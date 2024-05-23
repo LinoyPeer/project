@@ -1,0 +1,76 @@
+header {
+  width: 100vw;
+  height: 70px;
+  background-color: #eeeae8;
+  direction: rtl;
+}
+
+nav ul li a {
+  color: #7a7a7a;
+  font-family: tahoma;
+  transition: all 0.3s ease-in-out;
+}
+
+nav ul li:hover ul {
+  background-color: #f1e6c2;
+}
+
+nav ul li a:hover {
+  background-color: #918a87;
+}
+
+.h1CSS {
+  color: #7a7a7a;
+  font-family: tahoma;
+  font-weight: 300;
+}
+
+p {
+  font-family: tahoma;
+}
+
+button[type=button] {
+  text-align: center;
+  background-color: #f1e6c2;
+  border: 1px solid #000;
+  color: #000;
+  font-weight: 400;
+}
+
+button[type=button]:hover {
+  background-color: #918a87;
+  color: #fff;
+  border: 1.5px solid #fff;
+}
+
+.gridProjects {
+  background-color: #fff;
+}
+
+.projects {
+  background-color: #eeeae8;
+}
+
+button[type=click] {
+  text-align: center;
+  background-color: #f1e6c2;
+  border: 1px solid #000;
+  color: #000;
+  font-weight: 400;
+}
+
+button[type=click]:hover {
+  background-color: #918a87;
+  color: #fff;
+  border: 1.5px solid #fff;
+}
+
+.saporter {
+  font-family: "Noto Sans Symbols 2", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+p[title=aboutMeP] {
+  line-height: 3;
+}/*# sourceMappingURL=projectMain.css.map */

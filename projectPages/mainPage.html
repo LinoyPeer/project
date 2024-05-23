@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <!-- לינק קומפיילר SASS -->
+    <link rel="stylesheet" href="../../../fullStack/project/projectSASS/projectMain.css">
+    <!-- לינק לפונט שמייצר הפרדה בדף -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Symbols+2&display=swap" rel="stylesheet">
+    <!-- לינק לבודסטראפ כפתור -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        img {
+            width: 6em;
+            padding-right: 40px;
+            position: absolute;
+            top: 6px;
+        }
+
+        nav {
+            width: 100vw;
+            line-height: 1.5;
+            position: relative;
+        }
+
+        nav ul {
+            list-style-type: none;
+            transform: translateX(-100px);
+        }
+
+        nav ul li {
+            position: relative;
+            display: inline-block;
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            width: 120px;
+
+        }
+
+        nav ul li:hover ul {
+            display: block;
+            transform: translateX(0px);
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        nav ul li ul li {
+            clear: both;
+        }
+
+        nav ul li a {
+            width: 120px;
+            display: block;
+            text-decoration: none;
+            line-height: 4;
+            text-align: center;
+        }
+
+
+        nav ul li a:hover {
+            color: black;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            text-decoration: underline;
+        }
+
+        .h1CSS {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 40px;
+            font-weight: bold;
+
+        }
+
+        p {
+            text-align: center;
+            font-size: 20px;
+            margin-top: 20px;
+            line-height: 2.5;
+            direction: rtl;
+        }
+
+        .grid-container {
+            width: 100vw;
+            height: 90vh;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            margin-top: 40px;
+            background-color: #fff;
+
+        }
+
+        .imgAboutMe {
+            position: relative;
+            grid-column: 3/4;
+            grid-row: 1/2;
+            width: 380px;
+            opacity: 0.8;
+        }
+
+        .txtAboutMe {
+            position: relative;
+            top: -30px;
+            text-align: justify;
+            grid-column: 1/3;
+            grid-row: 1/2;
+
+        }
+
+        button[type="button"] {
+            grid-column: 1/3;
+            /* לבדוק האם צריך */
+            position: relative;
+            right: -380px;
+            /* משוואה 1519=4X */
+            top: 20px;
+            margin-right: 40px;
+        }
+
+        .gridProjects {
+            width: 90vw;
+            height: 140vh;
+            display: grid;
+            gap: 15px;
+            margin: 0 auto;
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-columns: repeat(3, 1fr);
+
+        }
+
+        .projects {
+            font-size: 0.9rem;
+            text-align: justify;
+            padding: 15px;
+            text-align: center;
+            transition: all 0.5s ease-in-out;
+            border: 1px solid #000;
+
+
+        }
+
+        img[alt="Project1"] {
+            position: relative;
+            width: 200px;
+            height: 150px;
+        }
+
+        p[title="project1"] {
+            position: relative;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .projects:hover {
+            background-color: #fff;
+            padding: 5px;
+        }
+
+        button[type="click"] {
+            position: relative;
+            text-align: center;
+            font-size: 15px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="../../../fullStack/ImagesFullStack/לוגו-אתר-קורות-חיים.png" alt="logo">
+        <nav>
+            <ul>
+                <li><a href="#">עמוד הבית</a></li>
+                <li><a href="#">אודות</a>
+                    <ul>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">צור קשר</a></li>
+                <li><a href="#">גלריה</a></li>
+                <li><a href="#">הפרוייקטים שלי</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1 class="h1CSS">תיק עבודות</h1>
+        <p>שלום, ברוכים הבאים לאתר שלי <br> שמי לינוי בת 21 מטירת כרמל. אוהבת לערוך, לעצב וללמוד דברים
+            חדשים. <br>
+            אני מזמינה אתכם לעיין באתר שלי, להכיר אותי יותר ואת התחביבים שלי. <br> אולי תמצאו תחביב משותף ☺ <br>
+            תהנו!</p>
+        <p class="saporter">
+            &#128415;🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥🙥
+            &#128415;
+        </p>
+    </section>
+    <div class="grid-container">
+        <img class="imgAboutMe" src="../../../fullStack/ImagesFullStack/IMG_0603.JPG" alt="Picture Of Me">
+        <article class="txtAboutMe">
+            <h1 class="h1CSS">קצת עליי</h1>
+            <p title="aboutMeP">שמי לינוי בת 21 מטירת כרמל.<br>
+                מגיל מאוד צעיר אהבתי לערוך, ליצור קליפים ולחקור על מחשבים ושפות התכנות השונות. <br>
+                יחד עם הצד הטכני אני אוהבת ליצור תוכן בכל סגנון ולעצב אותו, לרקוד ולהיות בקרבת המשפחה.<br>
+                במסגרת פרויקט בניית אתר קורות חיים החלטתי ליצור את האתר בעיצוב סטנדרטי, שיתאים לתחילת הדרך שלי <br>
+                ויכלול
+                בתוכו
+                את
+                התוכן
+                המירבי על חיי.</p>
+            <button type="button" class="btn btn-outline-warning">להורדת קורות החיים</button>
+            <button type="button" class="btn btn-outline-warning">להצגת קורות החיים</button>
+
+        </article>
+    </div>
+    <!-- סקריפט לבוטסראפ כפתור -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <!-- section>.gridProjects>.projects>(img+h1{פרוייקט $}+p)*6 -->
+    <section>
+        <div class="gridProjects">
+            <!-- grid-item project1 -->
+            <div class="projects">
+                <img src="../../../WordPress + Elementor/profile-image.jpg" alt="Project1">
+                <h1>פרוייקט 1</h1>
+                <p title="project1">'תן לנו להוביל אותך קדימה' הוא דף הנחיתה הראשון שעבדתי עליו.
+                    דף זה משלב צבעי כחול עם צהבהב .</p>
+                <button type="click" class="btn btn-outline-warning">&#171; לעמוד הפרוייקט </button>
+            </div>
+            <!-- grid-item project2 -->
+            <div class="projects">
+                <img src="../../../WordPress + Elementor/profile-image.jpg" alt="Project1">
+                <h1>פרוייקט 2</h1>
+                <p title="project1">'לגלות את העולם' הוא דף הנחיתה השני שעבדתי עליו. 
+                    דף זה משולב תמונות ומלל וטופס רישום.</p>
+                <button type="click" class="btn btn-outline-warning">&#171; לעמוד הפרוייקט </button>
+            </div>
+            <!-- grid-item project2 -->
+            <div class="projects">
+                <img src="../../../WordPress + Elementor/profile-image.jpg" alt="Project1">
+                <h1>פרוייקט 3</h1>
+                <p title="project1">'כאן ועכשיו' הוא דף הנחיתה השלישי שעבדתי עליו.
+                    דף זה משלב רקע אומברה כחול וירוק.</p>
+                <button type="click" class="btn btn-outline-warning">&#171; לעמוד הפרוייקט </button>
+            </div>
+            <!-- grid-item project2 -->
+            <div class="projects">
+                <img src="../../../WordPress + Elementor/profile-image.jpg" alt="Project1">
+                <h1>פרוייקט 4</h1>
+                <p title="project1">''קפה טוב לבוקר טוב' הוא דף הנחיתה הרביעי שעבדתי עליו. 
+                    דף זה מציג את הדבר הראשון שחייב לשתות בבוקר.</p>
+                <button type="click" class="btn btn-outline-warning">&#171; לעמוד הפרוייקט </button>
+            </div>
+            <!-- grid-item project2 -->
+            <div class="projects">
+                <img src="../../../WordPress + Elementor/profile-image.jpg" alt="Project1">
+                <h1>פרוייקט 5</h1>
+                <p title="project1">'ייעוץ חינם' הוא דף הנחיתה החמישי שעבדתי עליו. 
+                    דף הנחיתה שהכי אהבתי.</p>
+                <button type="click" class="btn btn-outline-warning">&#171; לעמוד הפרוייקט </button>
+            </div>
+            <!-- grid-item project1 -->
+            <div class="projects">
+                <img src="../../../WordPress + Elementor/profile-image.jpg" alt="Project1">
+                <h1>פרוייקט 6</h1>
+                <p title="project1">במסגרת פרויקט הראשון, למדנו כיצד משתמשים בעורך האתר הייעודי WordPres.<br>יחד עם זאת,
+                    שילבנו תוסף
+                    מגוון באופציות עריכה
+                    חדשניות דרך Elementor.
+                </p>
+                <button type="click" class="btn btn-outline-warning">&#171; לעמוד הפרוייקט </button>
+            </div>
+        </div>
+
+    </section>
+    <form action="">
+        <label for="first_name">Name:</label>
+        <!-- פור צריך להיות זהה לאי-ידי שאנחנו נותנים לאלמנט -->
+        <input type="text" id="first_name" required>
+        <!-- required הופך את השדה לחובה -->
+        <label for="last_name">Last-Name:</label>
+        <input type="text" id="last_name" required>
+        <br><br>
+
+</body>
+
+</html>
