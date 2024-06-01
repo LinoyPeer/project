@@ -14,6 +14,9 @@
     <!-- לינק לבודסטראפ כפתור -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- לינק לספריית אייקונים -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
     <style>
         * {
@@ -22,12 +25,45 @@
             box-sizing: border-box;
         }
 
+        body {
+            scrollbar-width: none;
+        }
+
         img {
             width: 6em;
             padding-right: 40px;
             position: absolute;
             top: 6px;
         }
+
+        .social {
+            direction: ltr;
+            display: flex;
+            width: 100%;
+            position: absolute;
+            top: 15px;
+            gap: 20px;
+
+        }
+
+        .fa {
+            font-size: 30px;
+            text-decoration: none;
+            color: #000;
+            background-color: #7a7a7a;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            justify-content: center;
+            padding-top: 5px;
+        }
+
+        .fa:hover {
+            color: #fff;
+            background-color: #f1e6c2;
+        }
+
 
         nav {
             width: 100vw;
@@ -48,7 +84,7 @@
         nav ul li ul {
             display: none;
             position: absolute;
-            width: 120px;
+            width: 160px;
 
         }
 
@@ -64,11 +100,13 @@
         }
 
         nav ul li a {
-            width: 120px;
+            width: 160px;
             display: block;
             text-decoration: none;
-            line-height: 4;
+            line-height: 3.8;
             text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
         }
 
 
@@ -86,6 +124,7 @@
             font-weight: bold;
 
         }
+
 
         p {
             text-align: center;
@@ -112,6 +151,7 @@
             grid-row: 1/2;
             width: 380px;
             opacity: 0.8;
+            filter: drop-shadow(10px -10px 10px #f1e6c2);
         }
 
         .txtAboutMe {
@@ -134,8 +174,8 @@
         }
 
         .gridProjects {
-            width: 90vw;
-            height: 140vh;
+            width: 80vw;
+            height: 100vh;
             display: grid;
             gap: 15px;
             margin: 0 auto;
@@ -161,10 +201,15 @@
             height: 150px;
         }
 
+        .projects h1 {
+            font-size: 30px;
+            text-align: center;
+        }
+
         p[title="project1"] {
             position: relative;
             text-align: center;
-            font-size: 20px;
+            font-size: 15px;
         }
 
         .projects:hover {
@@ -178,12 +223,87 @@
             font-size: 15px;
 
         }
+
+        .formFeedback {
+            height: 90vh;
+            position: relative;
+            top: 40vh;
+            margin-top: -30vh;
+            line-height: 4;
+
+        }
+
+        form {
+            position: relative;
+            top: 85px;
+        }
+
+        .h1CSS {
+            padding-top: 5vh;
+            padding-bottom: 5vh;
+        }
+
+        .labelArea {
+            display: flex;
+            flex-direction: row;
+            margin-top: -6vh;
+            margin-right: 5vh;
+            gap: 20px;
+
+        }
+
+        label[for=first_name],
+        label[for=last_name],
+        label[for=email] {
+            margin-top: -2vh;
+        }
+
+        label[title="writeMe"] {
+            position: relative;
+            top: -120px;
+            left: -5vh;
+        }
+
+        label {
+            margin: 5px;
+        }
+
+        input,
+        #writeSomthing {
+            width: 20vw;
+            height: 5vh;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        #writeSomthing {
+            width: 500px;
+            height: 90px;
+            resize: none;
+            border: 2px solid #000;
+            flex: none;
+            margin-right: -6vh;
+
+
+        }
+
+        .btn[type="sent"] {
+            width: 10vw;
+            position: relative;
+            left: -40px;
+            top: -40px;
+        }
     </style>
 </head>
 
 <body>
     <header>
         <img src="../../../fullStack/ImagesFullStack/לוגו-אתר-קורות-חיים.png" alt="logo">
+        <span class="social">
+            <a href="https://www.facebook.com/linoy.peer.56" class="fa fa-facebook" target="_blank"></a>
+            <a href="https://www.instagram.com/linoy_peer/" class="fa fa-instagram" target="_blank"></a>
+            <a href="https://github.com/" class="fa fa-github" target="_blank"></a>
+        </span>
         <nav>
             <ul>
                 <li><a href="#">עמוד הבית</a></li>
@@ -195,7 +315,7 @@
                 </li>
                 <li><a href="#">צור קשר</a></li>
                 <li><a href="#">גלריה</a></li>
-                <li><a href="#">הפרוייקטים שלי</a></li>
+                <li><a href="#myProject">הפרוייקטים שלי</a></li>
             </ul>
         </nav>
     </header>
@@ -234,14 +354,15 @@
         crossorigin="anonymous"></script>
     <!-- section>.gridProjects>.projects>(img+h1{פרוייקט $}+p)*6 -->
     <section>
-        <div class="gridProjects">
+        <div class="gridProjects" id="myProject">
             <!-- grid-item project1 -->
             <div class="projects">
                 <img src="../../../WordPress + Elementor/profile-image.jpg" alt="Project1">
                 <h1>פרוייקט 1</h1>
                 <p title="project1">'תן לנו להוביל אותך קדימה' הוא דף הנחיתה הראשון שעבדתי עליו.
                     דף זה משלב צבעי כחול עם צהבהב .</p>
-                <button type="click" class="btn btn-outline-warning">&#171; לעמוד הפרוייקט </button>
+                <a rel="stylesheet" href="../../../fullStack/project/landingPages/landingPage1.html"><button
+                        type="click" class="btn btn-outline-warning">&#171; לעמוד הפרוייקט </button></a>
             </div>
             <!-- grid-item project2 -->
             <div class="projects">
@@ -249,7 +370,8 @@
                 <h1>פרוייקט 2</h1>
                 <p title="project1">'לגלות את העולם' הוא דף הנחיתה השני שעבדתי עליו. 
                     דף זה משולב תמונות ומלל וטופס רישום.</p>
-                <button type="click" class="btn btn-outline-warning">&#171; לעמוד הפרוייקט </button>
+                <a rel="stylesheet" href="../../../fullStack/project/landingPages/landingPage2.html"><button
+                        type="click" class="btn btn-outline-warning">&#171; לעמוד הפרוייקט </button></a>
             </div>
             <!-- grid-item project2 -->
             <div class="projects">
@@ -257,15 +379,17 @@
                 <h1>פרוייקט 3</h1>
                 <p title="project1">'כאן ועכשיו' הוא דף הנחיתה השלישי שעבדתי עליו.
                     דף זה משלב רקע אומברה כחול וירוק.</p>
-                <button type="click" class="btn btn-outline-warning">&#171; לעמוד הפרוייקט </button>
+                <a rel="stylesheet" href="../../../fullStack/project/landingPages/landingPage3.html"> <button
+                        type="click" class="btn btn-outline-warning">&#171; לעמוד הפרוייקט </button></a>
             </div>
             <!-- grid-item project2 -->
             <div class="projects">
                 <img src="../../../WordPress + Elementor/profile-image.jpg" alt="Project1">
                 <h1>פרוייקט 4</h1>
-                <p title="project1">''קפה טוב לבוקר טוב' הוא דף הנחיתה הרביעי שעבדתי עליו. 
-                    דף זה מציג את הדבר הראשון שחייב לשתות בבוקר.</p>
-                <button type="click" class="btn btn-outline-warning">&#171; לעמוד הפרוייקט </button>
+                <p title="project1">''קפה טוב לבוקר טוב' דף הנחיתה הרביעי שעבדתי עליו. 
+                    דף זה הדבר הראשון שחייב לשתות בבוקר.</p>
+                <a rel="stylesheet" href="../../../fullStack/project/landingPages/landingPage4.html"> <button
+                        type="click" class="btn btn-outline-warning">&#171; לעמוד הפרוייקט </button></a>
             </div>
             <!-- grid-item project2 -->
             <div class="projects">
@@ -273,30 +397,47 @@
                 <h1>פרוייקט 5</h1>
                 <p title="project1">'ייעוץ חינם' הוא דף הנחיתה החמישי שעבדתי עליו. 
                     דף הנחיתה שהכי אהבתי.</p>
-                <button type="click" class="btn btn-outline-warning">&#171; לעמוד הפרוייקט </button>
+                <a rel="stylesheet" href="../../../fullStack/project/landingPages/landingPage5.html"> <button
+                        type="click" class="btn btn-outline-warning">&#171;
+                        לעמוד הפרוייקט
+                    </button></a>
             </div>
             <!-- grid-item project1 -->
             <div class="projects">
                 <img src="../../../WordPress + Elementor/profile-image.jpg" alt="Project1">
                 <h1>פרוייקט 6</h1>
-                <p title="project1">במסגרת פרויקט הראשון, למדנו כיצד משתמשים בעורך האתר הייעודי WordPres.<br>יחד עם זאת,
-                    שילבנו תוסף
-                    מגוון באופציות עריכה
-                    חדשניות דרך Elementor.
+                <p title="project1">במסגרת פרויקט הראשון, למדנו כיצד משתמשים בעורך האתר הייעודי WordPres.
                 </p>
-                <button type="click" class="btn btn-outline-warning">&#171; לעמוד הפרוייקט </button>
+                <a rel="stylesheet" href="../../../fullStack/project/landingPages/landingPage6.html"> <button
+                        type="click" class="btn btn-outline-warning">&#171; לעמוד הפרוייקט </button></a>
             </div>
         </div>
 
     </section>
-    <form action="">
-        <label for="first_name">Name:</label>
-        <!-- פור צריך להיות זהה לאי-ידי שאנחנו נותנים לאלמנט -->
-        <input type="text" id="first_name" required>
-        <!-- required הופך את השדה לחובה -->
-        <label for="last_name">Last-Name:</label>
-        <input type="text" id="last_name" required>
-        <br><br>
+    <div class="formFeedback" dir="rtl">
+        <!-- כותרת לטופס -->
+        <h1 class="h1CSS">אשמח לקבל פידבק על האתר שלי!</h1>
+        <form action="">
+            <div class="labelArea">
+                <!--(שדה חובה) איזור הזנת שם פרטי -->
+                <label for="first_name">שם פרטי:</label>
+                <!-- פור צריך להיות זהה לאי-ידי שאנחנו נותנים לאלמנט -->
+                <input type="text" id="first_name" required>
+                <!--(שדה חובה) איזור הזנת שם משפחה -->
+                <label for="last_name">שם משפחה:</label>
+                <input type="text" id="last_name" required>
+                <!--(שדה חובה) איזור הזנת מייל -->
+                <label for="email">אימייל:</label>
+                <input type="text" id="email" required>
+            </div>
+            <br><br>
+            <!--איזור הזנת מלל חופשי, מוגבל לעד 20 מילים -->
+            <label for="text" title="writeMe">כתבו לי &#10084;</label>
+            <textarea name="feedback" id="writeSomthing" maxlength="20"></textarea>
+            <button type="sent" class="btn btn-outline-warning">שלחו לי &#128516;
+            </button>
+        </form>
+    </div>
 
 </body>
 

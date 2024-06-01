@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Picture</title>
+    <!-- פונט Assistant -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&display=swap" rel="stylesheet">
+    <!-- פונט HEEBO מגוגל -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap" rel="stylesheet">
+
+    <style>
+        /* איפוס מצב דיפולטיבי */
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        /* רקע לכל הדף */
+        html {
+            background-color: #E5EEFF;
+        }
+
+        /* ביטול גלילה צידי */
+        body {
+            overflow: hidden;
+        }
+
+        /* מרכוז הקונטיינר הראשי */
+        .container {
+            width: 40vw;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            top: 100px;
+            left: 450px;
+            gap: 5px;
+        }
+
+        /* הגדרת גודל לכל תמונה */
+        img {
+            width: 5vw;
+            height: 10vh;
+        }
+
+        /* חלק ראשון 4 תמונות וריבוע מלל אחד ליד השני */
+        .container1 {
+            display: flex;
+            flex-direction: row;
+            gap: 5px;
+
+        }
+
+        /* 4 תמונות בשתי עמודות (יוצרות ריבוע בריבוע אחד גדול) */
+        .images1 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 5px;
+
+        }
+
+        /* עיצוב ריבוע מלל  */
+        .blue {
+            background-color: #020253;
+            width: 160px;
+        }
+
+        .text1 {
+            width: 130px;
+            text-align: center;
+            position: relative;
+            top: 35px;
+            right: -13px;
+        }
+
+        .blue h1 {
+            color: #0EE1DA;
+            font-size: 15px;
+            font-family: Assistant;
+        }
+
+        .blue p {
+            color: #F9F9F9;
+            font-size: 10px;
+            font-weight: 300;
+            font-family: Assistant;
+
+        }
+
+
+        /* 4 -תמונות אחד ליד השני חלק שני */
+        .images2 {
+            display: flex;
+            flex-direction: row;
+            gap: 5px;
+
+        }
+
+        /* חלק שלישי 6 תמונות ומלבן מלל אחד ליד השני */
+        .container3 {
+            display: flex;
+            flex-direction: row-reverse;
+            gap: 5px;
+
+        }
+
+        /* 6 תמונות בשתי עמודות ושלוש שורות (יוצרות מלבן בריבוע אחד גדול) */
+        .images3 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 5px;
+        }
+
+        /* עיצוב מלבן מלל  */
+        .purple {
+            background-color: #8E097C;
+            width: 160px;
+            padding-top: 20px;
+        }
+
+        .purple h1 {
+            color: #FFFFFF;
+            font-size: 13px;
+            font-family: Assistant;
+            text-align: center;
+        }
+
+        .purple p {
+            color: #F9F9F9;
+            font-size: 7px;
+            font-family: Assistant;
+            text-align: center;
+            margin: 0 auto;
+            padding-top: 6px;
+        }
+
+        .form3 {
+            padding-top: 6px;
+            height: 100%;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .name1 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            text-align: right;
+            position: relative;
+            top: 1px;
+            right: 20px;
+            color: #0EE1DA;
+            font-family: Heebo;
+            font-size: 5px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        input {
+            width: 120px;
+            height: 15px;
+            background-color: #E5EEFF;
+            border: none;
+            border-bottom: 2px solid #0EE1DA;
+
+        }
+
+        textarea {
+            width: 120px;
+            height: 55px;
+            resize: none;
+            background-color: #E5EEFF;
+            border: none;
+            border-bottom: 2px solid #0EE1DA;
+
+        }
+
+        input[type="submit"] {
+            background-color: #0EE1DA;
+            width: 120px;
+            height: 15px;
+            font-size: 7px;
+            font-weight: bold;
+            color: #011560;
+            font-family: Heebo;
+
+        }
+
+        @media(max-width:850px) {
+            body {
+                overflow: auto;
+            }
+
+            .container {
+                width: 100vw;
+                height: 100vh;
+                top: 0px;
+                left: 0px;
+            }
+
+            img {
+                width: 48vw;
+                height: 25vh;
+            }
+
+            .container1,
+            .container2,
+            .container3 {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+
+            .images1 {
+                gap: 5px;
+            }
+
+            .blue {
+                width: 98vw;
+                height: 50vh;
+            }
+
+            .text1 {
+                width: 400px;
+                text-align: center;
+                position: relative;
+                top: 70px;
+                right: 0px;
+                left: 25px;
+            }
+
+            .blue h1 {
+                color: #0EE1DA;
+                font-size: 40px;
+                font-family: Assistant;
+            }
+
+            .blue p {
+                color: #F9F9F9;
+                font-size: 30px;
+                font-weight: 300;
+                font-family: Assistant;
+
+            }
+
+            .images2 {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .purple {
+                width: 100vw;
+                height: 70vh;
+            }
+
+            .purple h1 {
+                font-size: 40px;
+                text-align: center;
+            }
+
+            .purple p {
+                font-size: 28px;
+                padding-top: 0px;
+            }
+
+            .form3 {
+                padding-bottom: 20vh;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+
+
+            }
+
+            .name1+input[type="submit"] {
+                display: none;
+                text-align: right;
+
+            }
+
+            label {
+                text-align: right;
+                position: relative;
+                top: 0px;
+                right: 0px;
+                font-size: 15px;
+                display: flex;
+                flex-direction: column;
+            }
+
+            input {
+                width: 80vw;
+                height: 40px;
+                border: none;
+                border-bottom: 4px solid #0EE1DA;
+
+            }
+
+            textarea {
+                width: 80vw;
+                height: 70px;
+                resize: none;
+                border: none;
+                border-bottom: 4px solid #0EE1DA;
+                margin-bottom: 25px;
+
+
+            }
+
+            input[type="submit"] {
+                width: 80vw;
+                height: 40px;
+                font-size: 17px;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- חלק ראשון -->
+        <div class="container1">
+            <div class="images1">
+                <img src="../../../WordPress + Elementor\Rectangle 515.png" alt="1X1">
+                <img src="../../../WordPress + Elementor\Rectangle 514.png" alt="1X2">
+                <img src="../../../WordPress + Elementor\Rectangle 516.png" alt="2X1">
+                <img src="../../../WordPress + Elementor\Rectangle 506-5.png" alt="2X2">
+            </div>
+            <div class="blue">
+                <div class="text1">
+                    <h1>לגלות את העולם</h1>
+                    <p>לורם איפסום או בקיצור ליפסום, הוא מלל מקובל וחסר משמעות המשמש “ממלא מקום” בעת עריכ.</p>
+                </div>
+            </div>
+        </div>
+        <!-- חלק שני -->
+        <div class="container2">
+            <div class="images2">
+                <div>
+                    <img src="../../../WordPress + Elementor\Rectangle 506-2.png" alt="2X1">
+                    <img src="../../../WordPress + Elementor\Rectangle 506-3.png" alt="2x2">
+                </div>
+                <div>
+                    <img src="../../../WordPress + Elementor\Rectangle 506-4.png" alt="2X3">
+                    <img src="../../../WordPress + Elementor\Rectangle 506-1.png" alt="2X4">
+                </div>
+
+            </div>
+        </div>
+
+        <!-- חלק שלישי -->
+        <div class="container3">
+            <div class="images3">
+                <img src="../../../WordPress + Elementor\Rectangle 506-8.png" alt="4X3">
+                <img src="../../../WordPress + Elementor\Rectangle 506-7.png" alt="4X4">
+                <img src="../../../WordPress + Elementor\Rectangle 506-9.png" alt="5X3">
+                <img src="../../../WordPress + Elementor\Rectangle 506-6.png" alt="5X4">
+                <img src="../../../WordPress + Elementor\Rectangle 513@2x.png" alt="6X3">
+                <img src="../../../WordPress + Elementor\Rectangle 506.png" alt="6X4">
+            </div>
+            <div class="purple">
+                <h1>ספרו לנו על החוויה שלכם</h1>
+                <p>לורם איפסום או בקיצור ליפסום, הוא מלל מקובל <br> וחסר משמעות המשמש “ממלא מקום” בעת עריכ.</p>
+
+                <form class="form3">
+                    <div claas="name1">
+                        <label for="">שם מלא</label>
+                        <input type="text">
+                    </div>
+                    <div claas="mail1">
+                        <label for="">דוא"ל</label>
+                        <input type="text">
+                    </div>
+
+                    <label for="">החוויה שלכם</label>
+                    <textarea></textarea>
+                    <input type="submit" value="שליחה">
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
