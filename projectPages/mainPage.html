@@ -26,7 +26,7 @@
         }
 
         body {
-            scrollbar-width: none;
+            overflow-x: hidden;
         }
 
         img {
@@ -42,27 +42,22 @@
             width: 100%;
             position: absolute;
             top: 15px;
+            left: 4rem;
             gap: 20px;
-
         }
 
         .fa {
             font-size: 30px;
-            text-decoration: none;
-            color: #000;
-            background-color: #7a7a7a;
             border-radius: 50%;
             width: 40px;
             height: 40px;
             text-align: center;
             justify-content: center;
             padding-top: 5px;
+            position: relative;
+            z-index: 6;
         }
 
-        .fa:hover {
-            color: #fff;
-            background-color: #f1e6c2;
-        }
 
 
         nav {
@@ -74,6 +69,7 @@
         nav ul {
             list-style-type: none;
             transform: translateX(-100px);
+
         }
 
         nav ul li {
@@ -85,19 +81,27 @@
             display: none;
             position: absolute;
             width: 160px;
-
+            text-align: center;
+            max-height: min-content;
         }
 
         nav ul li:hover ul {
             display: block;
             transform: translateX(0px);
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
+            border-radius: 10px;
         }
+
+
 
         nav ul li ul li {
             clear: both;
+            width: max-content;
         }
+
+        nav ul li ul li a {
+            font-size: 0.8rem;
+        }
+
 
         nav ul li a {
             width: 160px;
@@ -112,9 +116,10 @@
 
         nav ul li a:hover {
             color: black;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
+            border-radius: 10px;
             text-decoration: underline;
+            line-height: 3;
+
         }
 
         .h1CSS {
@@ -181,7 +186,6 @@
             margin: 0 auto;
             grid-template-rows: repeat(3, 1fr);
             grid-template-columns: repeat(3, 1fr);
-
         }
 
         .projects {
@@ -191,19 +195,20 @@
             text-align: center;
             transition: all 0.5s ease-in-out;
             border: 1px solid #000;
-
-
         }
 
-        img[alt="Project1"] {
+        img.imgP {
             position: relative;
             width: 200px;
             height: 150px;
+            right: -1rem;
         }
+
 
         .projects h1 {
             font-size: 30px;
             text-align: center;
+            margin-top: 1rem;
         }
 
         p[title="project1"] {
@@ -225,9 +230,9 @@
         }
 
         .formFeedback {
-            height: 90vh;
+            height: 70vh;
             position: relative;
-            top: 40vh;
+            top: 55vh;
             margin-top: -30vh;
             line-height: 4;
 
@@ -283,8 +288,6 @@
             border: 2px solid #000;
             flex: none;
             margin-right: -6vh;
-
-
         }
 
         .btn[type="sent"] {
@@ -309,12 +312,12 @@
                 <li><a href="#">עמוד הבית</a></li>
                 <li><a href="#">אודות</a>
                     <ul>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
+                        <li><a href="aboutPage.html">קצת עליי ועל האתר</a></li>
+                        <li><a href="#">מקורות שבהן השתמשתי</a></li>
                     </ul>
                 </li>
-                <li><a href="#">צור קשר</a></li>
-                <li><a href="#">גלריה</a></li>
+                <li><a href="contactPage.html">צור קשר</a></li>
+                <li><a href="picturePage.html">גלריה</a></li>
                 <li><a href="#myProject">הפרוייקטים שלי</a></li>
             </ul>
         </nav>
@@ -344,7 +347,7 @@
                 התוכן
                 המירבי על חיי.</p>
             <button type="button" class="btn btn-outline-warning">להורדת קורות החיים</button>
-            <button type="button" class="btn btn-outline-warning">להצגת קורות החיים</button>
+            <button type="button" class="btn btn-outline-warning btnCv">להצגת קורות החיים</button>
 
         </article>
     </div>
@@ -357,7 +360,8 @@
         <div class="gridProjects" id="myProject">
             <!-- grid-item project1 -->
             <div class="projects">
-                <img src="../../../WordPress + Elementor/profile-image.jpg" alt="Project1">
+                <img src="../../../fullStack/project/landingPages/landingPagesPictures/landingPageLetDesktop.png"
+                    alt="Project1" class="imgP">
                 <h1>פרוייקט 1</h1>
                 <p title="project1">'תן לנו להוביל אותך קדימה' הוא דף הנחיתה הראשון שעבדתי עליו.
                     דף זה משלב צבעי כחול עם צהבהב .</p>
@@ -366,7 +370,8 @@
             </div>
             <!-- grid-item project2 -->
             <div class="projects">
-                <img src="../../../WordPress + Elementor/profile-image.jpg" alt="Project1">
+                <img src="../../../fullStack/project/landingPages/landingPagesPictures/landingPagePinkDesktop.png"
+                    alt="Project2" class="imgP">
                 <h1>פרוייקט 2</h1>
                 <p title="project1">'לגלות את העולם' הוא דף הנחיתה השני שעבדתי עליו. 
                     דף זה משולב תמונות ומלל וטופס רישום.</p>
@@ -375,7 +380,8 @@
             </div>
             <!-- grid-item project2 -->
             <div class="projects">
-                <img src="../../../WordPress + Elementor/profile-image.jpg" alt="Project1">
+                <img src="../../../fullStack/project/landingPages/landingPagesPictures/landingPageHereDesktop.png"
+                    alt="Project3" class="imgP">
                 <h1>פרוייקט 3</h1>
                 <p title="project1">'כאן ועכשיו' הוא דף הנחיתה השלישי שעבדתי עליו.
                     דף זה משלב רקע אומברה כחול וירוק.</p>
@@ -384,7 +390,7 @@
             </div>
             <!-- grid-item project2 -->
             <div class="projects">
-                <img src="../../../WordPress + Elementor/profile-image.jpg" alt="Project1">
+                <img src="../../../WordPress + Elementor/profile-image.jpg" alt="Project4" class="imgP">
                 <h1>פרוייקט 4</h1>
                 <p title="project1">''קפה טוב לבוקר טוב' דף הנחיתה הרביעי שעבדתי עליו. 
                     דף זה הדבר הראשון שחייב לשתות בבוקר.</p>
@@ -393,7 +399,8 @@
             </div>
             <!-- grid-item project2 -->
             <div class="projects">
-                <img src="../../../WordPress + Elementor/profile-image.jpg" alt="Project1">
+                <img src="../../../fullStack/project/landingPages/landingPagesPictures/landingPagePhoneDesktop.png"
+                    alt="Project5" class="imgP">
                 <h1>פרוייקט 5</h1>
                 <p title="project1">'ייעוץ חינם' הוא דף הנחיתה החמישי שעבדתי עליו. 
                     דף הנחיתה שהכי אהבתי.</p>
@@ -404,7 +411,8 @@
             </div>
             <!-- grid-item project1 -->
             <div class="projects">
-                <img src="../../../WordPress + Elementor/profile-image.jpg" alt="Project1">
+                <img src="../../../fullStack/project/landingPages/landingPagesPictures/landingPagePicDesktop.png"
+                    alt="Project6" class="imgP">
                 <h1>פרוייקט 6</h1>
                 <p title="project1">במסגרת פרויקט הראשון, למדנו כיצד משתמשים בעורך האתר הייעודי WordPres.
                 </p>
@@ -438,6 +446,12 @@
             </button>
         </form>
     </div>
+    <script>
+        let btn = document.querySelector('.btnCv').addEventListener('click', () => {
+            window.open("file:///C:/Users/Linoy/Desktop/%D7%A7%D7%95%D7%A8%D7%A1%20FullStack/WordPress%20+%20Elementor/WordPress%20+%20Elementor/%D7%9C%D7%99%D7%A0%D7%95%D7%99%20%D7%A4%D7%90%D7%A8%20%20%D7%99%D7%A0%D7%95%D7%90%D7%A824%20%D7%A7%D7%95%D7%A8%D7%95%D7%AA%20%D7%97%D7%99%D7%99%D7%9D.pdf");
+        })
+
+    </script>
 
 </body>
 

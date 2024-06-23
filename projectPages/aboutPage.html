@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Page</title>
+    <!-- לינק לפונט REM -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=REM:ital,wght@0,100..900;1,100..900&family=Sevillana&display=swap"
+        rel="stylesheet">
+    <!-- לינק קומפיילר SASS -->
+    <link rel="stylesheet" href="../../../fullStack/project/projectSASS/projectMain.css">
+    <!-- לינק לספריית אייקונים -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--  IBM Plex Sans Hebrew לינק לפונט -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Hebrew:wght@100;200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow-x: hidden;
+            background-color: #ecebb63f;
+
+        }
+
+        img {
+            width: 6em;
+            padding-right: 40px;
+            position: absolute;
+            top: 6px;
+        }
+
+        .social {
+            direction: ltr;
+            display: flex;
+            width: 100%;
+            position: absolute;
+            top: 15px;
+            gap: 20px;
+            left: 4rem;
+        }
+
+        .fa {
+            font-size: 30px;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            justify-content: center;
+            padding-top: 5px;
+            position: relative;
+            z-index: 6;
+        }
+
+
+
+        nav {
+            width: 100vw;
+            line-height: 1.5;
+            position: relative;
+            z-index: 3;
+        }
+
+        nav ul {
+            list-style-type: none;
+            transform: translateX(-100px);
+        }
+
+        nav ul li {
+            position: relative;
+            display: inline-block;
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            width: 160px;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+            transform: translateX(0px);
+            border-radius: 10px;
+        }
+
+
+        nav ul li ul li {
+            clear: both;
+            width: max-content;
+        }
+
+        nav ul li ul li a {
+            font-size: 0.8rem;
+        }
+
+        nav ul li a {
+            width: 160px;
+            display: block;
+            text-decoration: none;
+            line-height: 3.8;
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+
+        nav ul li a:hover {
+            color: black;
+            border-radius: 10px;
+            text-decoration: underline;
+            line-height: 3;
+
+        }
+
+        .containerTitle {
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            top: 20vh;
+        }
+
+        .sectionTitleH1 {
+            width: 90vw;
+            height: 15vh;
+            margin: 0 auto;
+            background: url("https://images.unsplash.com/photo-1465146633011-14f8e0781093?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3450&q=80"),
+                #f1e6c2;
+            border-radius: 20px;
+            position: relative;
+            top: -1rem;
+        }
+
+        .titleH1 {
+            color: #f1e6c2;
+            font-family: IBM Plex Sans Hebrew;
+            font-size: 40px;
+            font-weight: 500;
+            position: absolute;
+            top: 48%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .about {
+            width: 100vw;
+            height: 50vh;
+            position: absolute;
+            top: 40vh;
+            text-align: center;
+            line-height: 3.5;
+            font-family: IBM Plex Sans Hebrew;
+            direction: rtl;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="containerTitle">
+        <section class="sectionTitleH1">
+            <h1 class="titleH1">אודות</h1>
+        </section>
+    </div>
+    <div class="about">
+        <p>שמי לינוי בת 21 מטירת כרמל. <br>
+            אני אוהבת ללמוד, מתעניינת בעולם המחשוב והעיצוב, <br>
+            אפשר לומר שרוב התעסוקה שלי היא סביב נושאים אלו :) במסגרת לימוד בניית אתרים התבקשנו להכין אתר ולעצב אותו דרך
+            קוד,<br>
+            החלטתי להכין אתר הכולל את שפות התוכנה HTML, CSS, JavaScript בתוספות קישורים חיצוניים, עזר בBootstrap וגם
+            פונטים נחמדים :)<br>
+            ראשית התוכן כולל בתוכו בראש האתר את התפריטים הרלוונטים לאתר הראשון שלי, מכיל מידע מועט אך מספק עבור
+            ההתחלה.<br>
+            האתר מעוצב עם גווני הצבעים בז', צהוב פסטלת וחום כהה. הגוונים האלו הם האהובים עליי ויחד יוצר עיצוב יפיפה!<br>
+            לאתר הוספתי דף גלריה שדרכה ניתן להבחין שאני מתחברת לעולם הצילום :)<br>
+            אני מקווה שתאהבי את האתר שלי! <br>
+        </p>
+    </div>
+    <header>
+        <img src="../../../fullStack/ImagesFullStack/לוגו-אתר-קורות-חיים.png" alt="logo">
+        <span class="social">
+            <a href="https://www.facebook.com/linoy.peer.56" class="fa fa-facebook" target="_blank"></a>
+            <a href="https://www.instagram.com/linoy_peer/" class="fa fa-instagram" target="_blank"></a>
+            <a href="https://github.com/" class="fa fa-github" target="_blank"></a>
+        </span>
+        <nav>
+            <ul>
+                <li><a href="mainPage.html">עמוד הבית</a></li>
+                <li><a href="#">אודות</a>
+                    <ul>
+                        <li><a href="aboutPage.html">קצת עליי ועל האתר</a></li>
+                        <li><a href="#">מקורות שבהן השתמשתי</a></li>
+                    </ul>
+                </li>
+                <li><a href="contactPage.html">צור קשר</a></li>
+                <li><a href="#">גלריה</a></li>
+                <li><a href="mainPage.html#myProject">הפרוייקטים שלי</a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+
+</html>

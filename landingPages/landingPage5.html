@@ -17,158 +17,48 @@
             box-sizing: border-box;
         }
 
-        body {
-            overflow: hidden;
-        }
-
-        img {
+        .containerAll {
             width: 100vw;
-            height: 70vh;
-            z-index: 1;
-
-        }
-
-        .text1 {
-            position: relative;
-            top: -23em;
-            text-align: center;
-        }
-
-
-        .form1 {
-            position: relative;
-            top: -200px;
-        }
-
-
-        label {
-            color: #fff;
-        }
-
-        h1 {
-            color: #D3E10E;
-            font-family: Assistant;
-            font-weight: bold;
-            font-size: 60px;
-            margin-bottom: 15px;
-        }
-
-        p {
-            color: #fff;
-            font-size: 15px;
-            font-family: Assistant;
-
-        }
-
-        .form1 {
-            display: flex;
-            flex-direction: row-reverse;
-            position: relative;
-            left: -20em;
-            margin-top: 120px;
-            gap: 30px;
-        }
-
-        .name1,
-        .mail1 {
+            height: 100vw;
             display: flex;
             flex-direction: column;
         }
 
-        .form1 input[type="text"] {
-            width: 350px;
-            height: 45px;
-            background-color: #F6F6F6;
-            border: none;
-            border-bottom: 4px solid #D3E10E;
+        .containerPhone img {
+            width: 250px;
+            height: 450px;
+            position: absolute;
+            top: 25vh;
         }
 
-
-        .form1 label {
-            color: #011560;
-            text-align: right;
-            font-family: Assistant;
-            font-size: 12px;
-            font-weight: bold;
-        }
-
-        input[type="submit"] {
-            width: 150px;
-            height: 40px;
-            border: none;
-            color: #011560;
-            font-family: Assistant;
-            font-weight: bold;
+        .containerForm {
+            width: 650px;
+            height: 100vh;
+            margin: 0 auto;
+            text-align: center;
             position: relative;
-            top: 0.9em;
-            background-color: #D3E10E;
-            font-size: 20px;
-        }
+            top: 50vh;
 
-        @media(max-width:850px) {
-
-            img {
-                width: 100vw;
-                height: 50vh;
-                z-index: 1;
-
-            }
-
-            .text1 {
-                margin-top: 90px;
-            }
-
-            h1 {
-                font-size: 35px;
-                margin-bottom: 15px;
-            }
-
-            .form1 {
-                flex-direction: column;
-                margin-top: 90px;
-            }
-
-            .name1,
-            .mail1 {
-                position: relative;
-                right: -50vw;
-
-            }
-
-            .form1 input[type="text"] {
-                position: relative;
-                right: -130px;
-                width: 360px;
-            }
-
-            input[type="submit"] {
-                position: relative;
-            }
         }
     </style>
 </head>
 
 <body>
-    <!-- .container>img+h1+p+(.form1)>(label+input)*2+input -->
-    <div class="container">
-        <img src="../../../WordPress + Elementor/Path 15.png" alt="Image Trangle">
-        <div class="text1">
-            <h1>תן לנו להוביל אותך קדימה</h1>
-            <p>לורם איפסום או בקיצור ליפסום, הוא מלל מקובל וחסר משמעות המשמש “ממלא מקום” בעת עריכ.</p>
-        </div>
-        <div class="form1">
-            <div class="name1"> <!--מחלקה לשם בלבד -->
+    <!-- .conatainerAll>.containerPhone>img[alt="PhoneImage"]+.containerForm>h1+p+(label+input:text)*3+input:button -->
+    <div class="conatainerAll">
+        <div class="containerPhone">
+            <img src="../../../WordPress + Elementor/Image 1.png" alt="PhoneImage">
+            <div class="containerForm">
+                <h1>ייעוץ חינם</h1>
+                <p>לקבלת ייעוף חינם, מוזמנים להשאיר פרטים <br> ומומחה יחזור אליכם למענה</p>
                 <label for="">שם מלא</label>
-                <input type="text">
+                <input type="text" name="" id="">
+                <label for="">דוא"ל</label>
+                <input type="text" name="" id="">
+                <label for="">שם מלא</label>
+                <input type="text" name="" id="">
+                <input type="button" value="שליחה">
             </div>
-
-            <div class="mail1"> <!--מחלקה למייל בלבד -->
-
-                <label for="">דוא״ל</label>
-                <input type="text">
-            </div>
-
-            <input type="submit" value="שליחה">
         </div>
     </div>
 </body>

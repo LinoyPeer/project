@@ -105,6 +105,19 @@ input,
   font-style: normal;
 }
 
+.fa {
+  text-decoration: none;
+  color: #6b6969;
+  background-color: rgba(168, 163, 160, 0.5058823529);
+}
+
+.fa:hover {
+  color: #000;
+  background-color: #f1e6c2;
+  transition: all 0.5s ease-in-out;
+  padding: 5px;
+}
+
 p[title=aboutMeP] {
   line-height: 3;
 }/*# sourceMappingURL=projectMain.css.map */
