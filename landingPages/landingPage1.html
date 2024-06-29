@@ -25,7 +25,6 @@
             width: 100vw;
             height: 70vh;
             z-index: 1;
-
         }
 
         .text1 {
@@ -34,12 +33,13 @@
             text-align: center;
         }
 
-
         .form1 {
             position: relative;
             top: -200px;
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
         }
-
 
         label {
             color: #fff;
@@ -57,7 +57,6 @@
             color: #fff;
             font-size: 15px;
             font-family: Assistant;
-
         }
 
         .form1 {
@@ -83,7 +82,6 @@
             border-bottom: 4px solid #D3E10E;
         }
 
-
         .form1 label {
             color: #011560;
             text-align: right;
@@ -99,19 +97,15 @@
             color: #011560;
             font-family: Assistant;
             font-weight: bold;
-            position: relative;
-            top: 0.9em;
             background-color: #D3E10E;
             font-size: 20px;
         }
 
-        @media(max-width:850px) {
-
+        @media (max-width: 850px) {
             img {
                 width: 100vw;
                 height: 50vh;
                 z-index: 1;
-
             }
 
             .text1 {
@@ -126,24 +120,30 @@
             .form1 {
                 flex-direction: column;
                 margin-top: 90px;
+                align-items: center;
+                position: relative;
+                left: 5vw;
             }
 
             .name1,
             .mail1 {
-                position: relative;
-                right: -50vw;
-
+                width: 100%;
+                max-width: 360px;
             }
 
             .form1 input[type="text"] {
-                position: relative;
-                right: -130px;
-                width: 360px;
+                width: 100%;
             }
 
             input[type="submit"] {
-                position: relative;
-                display: block;
+                width: 100%;
+                max-width: 360px;
+                margin-top: 15px;
+            }
+
+            body {
+                overflow-x: hidden;
+                overflow-y: auto;
             }
         }
     </style>
@@ -152,7 +152,7 @@
 <body>
     <!-- .container>img+h1+p+(.form1)>(label+input)*2+input -->
     <div class="container">
-        <img src="../../../WordPress + Elementor/Path 15.png" alt="Image Trangle">
+        <img src="../../../fullStack/LinoyPeerProject/projectImages/BlueArrow.png" alt="Image Trangle">
         <div class="text1">
             <h1>תן לנו להוביל אותך קדימה</h1>
             <p>לורם איפסום או בקיצור ליפסום, הוא מלל מקובל וחסר משמעות המשמש “ממלא מקום” בעת עריכ.</p>

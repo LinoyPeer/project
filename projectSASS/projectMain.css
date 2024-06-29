@@ -1,7 +1,10 @@
 header {
+  position: fixed;
+  top: 0;
+  z-index: 6;
   width: 100vw;
-  height: 70px;
-  background-color: #eeeae8;
+  height: 75px;
+  background-color: #e1dcd9;
   direction: rtl;
 }
 
@@ -108,7 +111,7 @@ input,
 .fa {
   text-decoration: none;
   color: #6b6969;
-  background-color: rgba(168, 163, 160, 0.5058823529);
+  background-color: #eeeae8;
 }
 
 .fa:hover {
@@ -120,4 +123,20 @@ input,
 
 p[title=aboutMeP] {
   line-height: 3;
+}
+
+.currentpage {
+  background-color: #918a87;
+  border-radius: 10px;
+  line-height: 3;
+  color: #000;
+}
+
+.Logoname {
+  font-size: 13px;
+  font-family: "Playwrite MX", cursive;
+  position: absolute;
+  right: 6rem;
+  text-align: right;
+  top: 1.5rem;
 }/*# sourceMappingURL=projectMain.css.map */

@@ -12,7 +12,7 @@
         href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=REM:ital,wght@0,100..900;1,100..900&family=Sevillana&display=swap"
         rel="stylesheet">
     <!-- לינק קומפיילר SASS -->
-    <link rel="stylesheet" href="../../../fullStack/project/projectSASS/projectMain.css">
+    <link rel="stylesheet" href="../../../fullStack/LinoyPeerProject/projectSASS/projectMain.css">
     <!-- לינק לספריית אייקונים -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--  IBM Plex Sans Hebrew לינק לפונט -->
@@ -21,6 +21,13 @@
     <link
         href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Hebrew:wght@100;200;300;400;500;600;700&display=swap"
         rel="stylesheet">
+    <!-- לינק לפונט Playwrite MX -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+MX:wght@100..400&display=swap" rel="stylesheet">
+    <!-- לינק לבודסטראפ כפתור -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <style>
         * {
@@ -33,6 +40,10 @@
             overflow-x: hidden;
             background-color: #ecebb63f;
 
+        }
+
+        .hamburger {
+            display: none;
         }
 
         img {
@@ -71,6 +82,12 @@
             line-height: 1.5;
             position: relative;
             z-index: 3;
+            right: 9rem;
+
+        }
+
+        .Logoname {
+            right: 7rem;
         }
 
         nav ul {
@@ -163,11 +180,145 @@
             font-family: IBM Plex Sans Hebrew;
             direction: rtl;
         }
+
+        button[type="click"] {
+            /*כפתור כניסה לפרויקטים*/
+            position: relative;
+            text-align: center;
+            font-size: 15px;
+        }
+
+        #copyRight {
+            font-size: 15px;
+            text-align: right;
+            position: relative;
+            top: 75rem;
+            right: 6rem;
+        }
+
+        .ImageOfMe {
+            position: sticky;
+            font-size: 50px;
+            text-align: center;
+            border-radius: 5px;
+            top: 35rem;
+        }
+
+        @media screen and (max-width: 768px) {
+            .hamburger {
+                display: block;
+                /*בתצוגה רספונסיבית לטלפון תציג את סמל ההמבורגר*/
+                width: 30%;
+                text-align: center;
+                background-color: #918A87;
+                border-radius: 5px;
+                color: #fff;
+                font-weight: bold;
+            }
+
+            nav,
+            nav ul li {
+                /*'עיצוב ה'איזור nav 
+                'וגם את חלקי ה'עמודות li 'שנמצאים בתוך ה'עמודה ul שנמצאים בתוך 'ה'איזור*/
+                width: 100%;
+                clear: both;
+            }
+
+            nav {
+                /*עיצוה בלעדי לnav*/
+                border: 0px;
+                width: 30%;
+                position: absolute;
+                right: 25rem;
+                top: 1.5rem;
+
+            }
+
+            nav ul {
+                display: none;
+                width: 100%;
+                position: absolute;
+                left: 9rem;
+
+            }
+
+
+            nav ul li a {
+                height: 40px;
+                width: 120px;
+                font-size: 13px;
+                margin-top: 3px;
+                background-color: #c0b8b5;
+                border-radius: 10px;
+                color: #f1e6c2;
+
+            }
+
+            .hamburger:hover+ul {
+                display: block;
+                width: 100%;
+                position: absolute;
+                left: 9rem;
+            }
+
+            .social {
+                width: 100px;
+                position: sticky;
+                top: 1.4rem;
+                right: 15rem;
+                gap: 5px;
+            }
+
+            .fa {
+                width: 30px;
+                height: 30px;
+                font-size: 16px;
+                padding: 8px;
+            }
+
+
+
+            .about {
+                font-size: 15px;
+            }
+
+            .btnCv {
+                position: relative;
+                bottom: 0.8rem;
+            }
+
+            #copyRight {
+                position: relative;
+                top: 90rem;
+                right: 0rem;
+            }
+
+        }
     </style>
 </head>
 
 <body>
-
+    <header>
+        <span>
+            <img src="../../../fullStack/LinoyPeerProject/projectImages/לוגו-אתר-קורות-חיים.png" alt="logo">
+            <p class="Logoname">Linoy Pe'er</p>
+        </span>
+        <span class="social">
+            <a href="https://www.facebook.com/linoy.peer.56" class="fa fa-facebook" target="_blank"></a>
+            <a href="https://www.instagram.com/linoy_peer/" class="fa fa-instagram" target="_blank"></a>
+            <a href="https://github.com/" class="fa fa-github" target="_blank"></a>
+        </span>
+        <nav>
+            <div class="hamburger">&#9776;</div>
+            <ul>
+                <li><a href="mainPage.html">עמוד הבית</a></li>
+                <li><a href="aboutPage.html" class="currentpage">אודות</a></li>
+                <li><a href="contactPage.html">צור קשר</a></li>
+                <li><a href="picturePage.html">גלריה</a></li>
+                <li><a href="mainPage.html#myProject">הפרוייקטים שלי</a></li>
+            </ul>
+        </nav>
+    </header>
     <div class="containerTitle">
         <section class="sectionTitleH1">
             <h1 class="titleH1">אודות</h1>
@@ -186,29 +337,28 @@
             לאתר הוספתי דף גלריה שדרכה ניתן להבחין שאני מתחברת לעולם הצילום :)<br>
             אני מקווה שתאהבי את האתר שלי! <br>
         </p>
+        <button type="button" class="btn btn-outline-warning btnCv">להצגת קורות החיים</button>
+        <img src="../../../fullStack/LinoyPeerProject/projectImages/ImageOfMe.JPG" class="ImageOfMe" alt="ImageOfMe">
     </div>
-    <header>
-        <img src="../../../fullStack/ImagesFullStack/לוגו-אתר-קורות-חיים.png" alt="logo">
-        <span class="social">
-            <a href="https://www.facebook.com/linoy.peer.56" class="fa fa-facebook" target="_blank"></a>
-            <a href="https://www.instagram.com/linoy_peer/" class="fa fa-instagram" target="_blank"></a>
-            <a href="https://github.com/" class="fa fa-github" target="_blank"></a>
-        </span>
-        <nav>
-            <ul>
-                <li><a href="mainPage.html">עמוד הבית</a></li>
-                <li><a href="#">אודות</a>
-                    <ul>
-                        <li><a href="aboutPage.html">קצת עליי ועל האתר</a></li>
-                        <li><a href="#">מקורות שבהן השתמשתי</a></li>
-                    </ul>
-                </li>
-                <li><a href="contactPage.html">צור קשר</a></li>
-                <li><a href="#">גלריה</a></li>
-                <li><a href="mainPage.html#myProject">הפרוייקטים שלי</a></li>
-            </ul>
-        </nav>
-    </header>
+    <footer>
+        <p id="copyRight">כל הזכויות שמורות ללינוי פאר &#169;</p>
+    </footer>
+
+    <script>
+        // קורות חיים
+        let btn = document.querySelector('.btnCv').addEventListener('click', () => {
+            window.open("file:///C:/Users/Linoy/Desktop/%D7%A7%D7%95%D7%A8%D7%A1%20FullStack/fullStack/LinoyPeerProject/projectImages/%D7%9C%D7%99%D7%A0%D7%95%D7%99%20%D7%A4%D7%90%D7%A8%20%20%D7%99%D7%A0%D7%95%D7%90%D7%A824%20%D7%A7%D7%95%D7%A8%D7%95%D7%AA%20%D7%97%D7%99%D7%99%D7%9D.pdf");
+        })
+        // תפריט למובייל
+        document.addEventListener('DOMContentLoaded', function () {
+            var hamburger = document.querySelector('.hamburger');
+            var navMenu = document.querySelector('nav ul');
+
+            hamburger.addEventListener('click', function () {
+                navMenu.style.display = navMenu.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -16,7 +16,7 @@
         href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=REM:ital,wght@0,100..900;1,100..900&family=Sevillana&display=swap"
         rel="stylesheet">
     <!-- לינק קומפיילר SASS -->
-    <link rel="stylesheet" href="../../../fullStack/project/projectSASS/projectMain.css">
+    <link rel="stylesheet" href="../../../fullStack/LinoyPeerProject/projectSASS/projectMain.css">
     <!-- לינק לספריית אייקונים -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--  gstatic לינק לפונט -->
@@ -26,6 +26,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Hebrew:wght@100;200;300;400;500;600;700&display=swap"
         rel="stylesheet">
+    <!-- לינק לפונט Playwrite MX -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+MX:wght@100..400&display=swap" rel="stylesheet">
 
     <style>
         body {
@@ -41,10 +45,15 @@
             box-sizing: border-box;
         }
 
+        .hamburger {
+            display: none;
+        }
+
+
         .container {
             height: 100vh;
             position: relative;
-            top: 3rem;
+            top: 3.2rem;
         }
 
         .theForm {
@@ -54,7 +63,7 @@
             direction: rtl;
             align-items: center;
             justify-content: center;
-            margin-top: 20vh;
+            margin-top: 35vh;
 
         }
 
@@ -105,6 +114,12 @@
             top: 6px;
         }
 
+        .Logoname {
+            top: 1.6rem;
+            right: 7rem;
+        }
+
+
         .social {
             direction: ltr;
             display: flex;
@@ -134,6 +149,7 @@
             line-height: 1.5;
             position: relative;
             z-index: 3;
+            right: 9rem;
         }
 
         nav ul {
@@ -220,7 +236,6 @@
             top: 3.2rem;
             left: 50%;
             transform: translate(-50%, -50%);
-
         }
 
         .social1 {
@@ -228,28 +243,159 @@
             top: 6rem;
             left: -36.5rem;
         }
+
+        #copyRight {
+            font-size: 15px;
+            text-align: right;
+            position: relative;
+            top: 13vh;
+            right: 6rem;
+        }
+
+        @media screen and (max-width: 768px) {
+            .hamburger {
+                display: block;
+                /*בתצוגה רספונסיבית לטלפון תציג את סמל ההמבורגר*/
+                width: 30%;
+                text-align: center;
+                background-color: #918A87;
+                border-radius: 5px;
+                color: #fff;
+                font-weight: bold;
+            }
+
+            nav,
+            nav ul li {
+                /*'עיצוב ה'איזור nav 
+                'וגם את חלקי ה'עמודות li 'שנמצאים בתוך ה'עמודה ul שנמצאים בתוך 'ה'איזור*/
+                width: 100%;
+                clear: both;
+            }
+
+            nav {
+                /*עיצוה בלעדי לnav*/
+                border: 0px;
+                width: 30%;
+                position: absolute;
+                right: 25rem;
+                top: 1.5rem;
+
+            }
+
+            nav ul {
+                display: none;
+                width: 100%;
+                position: absolute;
+                left: 9rem;
+
+            }
+
+
+            nav ul li a {
+                height: 40px;
+                width: 120px;
+                font-size: 13px;
+                margin-top: 3px;
+                background-color: #c0b8b5;
+                border-radius: 10px;
+                color: #f1e6c2;
+
+            }
+
+            .hamburger:hover+ul {
+                display: block;
+                width: 100%;
+                position: absolute;
+                left: 9rem;
+            }
+
+            .social {
+                width: 100px;
+                position: sticky;
+                top: 1.4rem;
+                right: 15rem;
+                gap: 5px;
+            }
+
+            .fa {
+                width: 30px;
+                height: 30px;
+                font-size: 16px;
+                padding: 8px;
+            }
+
+
+            .theForm {
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                right: -7rem;
+                top: -2rem;
+            }
+
+            label {
+                font-size: 14px;
+                font-family: Tahoma;
+                position: relative;
+                top: 12px;
+                text-align: right;
+
+            }
+
+            input {
+                width: 30vw;
+                height: 6vh;
+                border-radius: 5%;
+                background-color: #f1e6c270;
+                border: 0.5px solid #000;
+
+            }
+
+            input[name="write"] {
+                width: 50vw;
+                height: 8vh;
+                position: relative;
+                right: 3rem;
+            }
+
+            #btn {
+                width: 6rem;
+                position: relative;
+                top: 1rem;
+                right: -1.8rem;
+            }
+
+            .social1 {
+                position: relative;
+                right: 11rem;
+            }
+
+            #copyRight {
+                position: relative;
+                top: 10vh;
+            }
+        }
     </style>
 </head>
 
 <body>
     <!-- form>(label+input)*3+input -->
     <header>
-        <img src="../../../fullStack/ImagesFullStack/לוגו-אתר-קורות-חיים.png" alt="logo">
+        <span>
+            <img src="../../../fullStack/LinoyPeerProject/projectImages/לוגו-אתר-קורות-חיים.png" alt="logo">
+            <p class="Logoname">Linoy Pe'er</p>
+        </span>
         <span class="social">
             <a href="https://www.facebook.com/linoy.peer.56" class="fa fa-facebook" target="_blank"></a>
             <a href="https://www.instagram.com/linoy_peer/" class="fa fa-instagram" target="_blank"></a>
             <a href="https://github.com/" class="fa fa-github" target="_blank"></a>
         </span>
         <nav>
+            <div class="hamburger">&#9776;</div>
             <ul>
                 <li><a href="mainPage.html">עמוד הבית</a></li>
-                <li><a href="#">אודות</a>
-                    <ul>
-                        <li><a href="aboutPage.html">קצת עליי ועל האתר</a></li>
-                        <li><a href="#">מקורות שבהן השתמשתי</a></li>
-                    </ul>
-                </li>
-                <li><a href="contactPage.html">צור קשר</a></li>
+                <li><a href="aboutPage.html">אודות</a></li>
+                <li><a href="contactPage.html" class="currentpage">צור קשר</a></li>
                 <li><a href="picturePage.html">גלריה</a></li>
                 <li><a href="mainPage.html#myProject">הפרוייקטים שלי</a></li>
             </ul>
@@ -258,12 +404,13 @@
     <div class="container">
         <form action="" name=" forme" class="theForm">
             <label for="">שם מלא:</label>
-            <input type="text">
+            <input type="text" required>
             <label for="">אימייל:</label>
-            <input type="text">
+            <input type="text" required>
             <label for="">מלל חופשי:</label>
-            <input type="text" name="write">
+            <input type="text" name="write" required>
             <input type="button" value="שתפו אותי!" id="btn" onclick="on()">
+            <p id="sentGoal"></p>
         </form>
         <div class="dontHave">
             <h1>אין לכם דוא"ל?</h1>
@@ -282,16 +429,28 @@
             <h1 title="titleUl">צור קשר</h1>
         </section>
     </div>
+    <footer>
+        <p id="copyRight">כל הזכויות שמורות ללינוי פאר &#169;</p>
+    </footer>
+
     <script>
         // const btn = document.getElementById('btn').addEventListener('click', function () {
         //     window.open("https://www.google.co.il");
         // });
         const btn = document.getElementById('btn');
         function on() {
-            window.open("https://www.google.co.il");
-            console.log('Button clicked'); // בדיקה שהכפתור נלחץ
-
+            let p = document.querySelector('#sentGoal');
+            p.innerText = "ההודעה נשלחה בהצלחה!";
         }
+        // תפריט למובייל
+        document.addEventListener('DOMContentLoaded', function () {
+            var hamburger = document.querySelector('.hamburger');
+            var navMenu = document.querySelector('nav ul');
+
+            hamburger.addEventListener('click', function () {
+                navMenu.style.display = navMenu.style.display === 'block' ? 'none' : 'block';
+            });
+        });
     </script>
 </body>
 

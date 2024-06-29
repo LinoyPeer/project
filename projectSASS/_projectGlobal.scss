@@ -6,11 +6,15 @@
 // $font: tahoma;
 
 header {
+    position: fixed;
+    top: 0;
+    z-index: 6;
     width: 100vw;
-    height: 70px;
+    height: 75px;
     background-color: $fillColor1;
     direction: rtl;
 }
+
 
 nav ul li a {
     color: $h1Color ;
@@ -63,7 +67,7 @@ p {
 }
 
 .projects {
-    background-color: $fillColor1;
+    background-color: $fillColor4;
 }
 
 button[type="click"] {
