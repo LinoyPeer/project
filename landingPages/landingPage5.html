@@ -106,7 +106,7 @@
 
         }
 
-        input[type="button"] {
+        input[type="submit"] {
             width: 110px;
             height: 35px;
             background-color: #FDBD03;
@@ -115,6 +115,8 @@
             font-weight: bold;
             margin-top: 60px;
             font-size: 17px;
+            color: #000;
+
         }
 
         hr.hrTop {
@@ -198,21 +200,21 @@
                 left: 0;
             }
 
-            input[type="button"] {
+            input[type="submit"] {
                 width: 100%;
                 margin-top: 20px;
             }
 
             hr.hrTop {
                 width: 90%;
-                position: static;
-                margin: 20px auto;
+                position: absolute;
+                margin-left: 10px;
             }
 
             hr.hrbottom {
-                position: relative;
+                position: sticky;
                 top: 60rem;
-                width: 60rem;
+                width: 100%;
             }
 
             .social {
@@ -221,6 +223,7 @@
                 display: flex;
                 justify-content: center;
                 gap: 10px;
+                margin-bottom: 2rem;
             }
 
             .fa-whatsapp {
@@ -235,7 +238,6 @@
 </head>
 
 <body>
-    <!-- .conatainerAll>.containerPhone>img[alt="PhoneImage"]+.containerForm>h1+p+(label+input:text)*3+input:button -->
     <div class="conatainerAll">
         <hr class="hrTop">
         <hr class="hrbottom">
@@ -252,7 +254,7 @@
                 </div>
                 <div class="labelAndInput">
                     <label for="">דוא"ל</label>
-                    <input class="inputText" type="text" name="" id="">
+                    <input class="inputText" type="email" name="" id="">
                 </div>
 
             </div>
@@ -260,7 +262,7 @@
                 <label for="">שם מלא</label>
                 <input class="inputType" type="text" name="" id="">
             </div>
-            <input type="button" value="שליחה">
+            <input type="submit" value="שליחה">
         </div>
         <a href="#" class="fa fa-whatsapp"></a>
         <div class="social">

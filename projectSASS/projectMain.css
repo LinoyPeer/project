@@ -36,7 +36,7 @@ p {
   font-family: tahoma;
 }
 
-.btn[type=button] {
+.btn[type=submit] {
   text-align: center;
   background-color: #f1e6c2;
   border: 1px solid #000;
@@ -44,7 +44,7 @@ p {
   font-weight: 400;
 }
 
-.btn[type=button]:hover {
+.btn[type=submit]:hover {
   background-color: #918a87;
   color: #fff;
   border: 1.5px solid #fff;
@@ -58,7 +58,8 @@ p {
   background-color: #eeeae8;
 }
 
-button[type=click] {
+button[type=submit],
+a.btnCv {
   text-align: center;
   background-color: #f1e6c2;
   border: 1px solid #000;
@@ -66,7 +67,8 @@ button[type=click] {
   font-weight: 400;
 }
 
-button[type=click]:hover {
+button[type=submit]:hover,
+a.btnCv:hover {
   background-color: #918a87;
   color: #fff;
   border: 1.5px solid #fff;

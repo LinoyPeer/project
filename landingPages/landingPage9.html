@@ -23,7 +23,6 @@
         body {
             overflow: hidden;
             background: linear-gradient(90deg, #273E9F 68%, rgb(238, 241, 248) 68%);
-
         }
 
         .whiteBackground {
@@ -74,6 +73,8 @@
         }
 
         input[type="text"],
+        input[type="email"],
+        input[type="tel"],
         input[type="submit"] {
             width: 18vw;
             height: 5vh;
@@ -87,17 +88,17 @@
             background-color: #5DD0D1;
             color: #DCF5F5;
             font-weight: bold;
-            font-size: 17px;
+            font-size: 13px;
             font-family: "Roboto Slab", serif;
             letter-spacing: 2px;
             margin-top: -15px;
 
         }
 
-        input[type="text"] {
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
             padding-left: 1vw;
-            color: #cac8c8;
-
         }
 
 
@@ -131,16 +132,32 @@
             height: 50px;
         }
 
+        .pPleaseFill p {
+            font-weight: 400;
+            color: #000;
+        }
+
         @media(max-width:850px) {
+
             body {
                 overflow-y: auto;
                 background: linear-gradient(180deg, #273E9F 90%, rgb(238, 241, 248) 90%);
+                overflow-x: hidden;
+                width: 100%;
+                min-height: 100vh;
             }
+
+            html,
+            body {
+                width: 100vw;
+                min-height: max-content;
+            }
+
 
             .whiteBackground {
                 z-index: 3;
                 width: 70vw;
-                height: 80vh;
+                height: 85vh;
                 top: 45vh;
                 bottom: 0;
                 right: 0;
@@ -153,9 +170,7 @@
 
             .whiteBackground h1 {
                 font: normal normal 900 25px/30px Heebo;
-                font-weight: 400;
-
-
+                font-weight: 500;
             }
 
             .whiteBackground p {
@@ -167,28 +182,32 @@
 
             }
 
-            .hp {
+            .h1BookFree {
                 width: 60vw;
+
             }
 
-            .ph p {
+            .pPleaseFill p {
                 width: 55vw;
-                color: #424542;
+                color: #000000;
+                font-weight: 300;
                 font-size: 20px;
                 text-align: center;
             }
 
-            .ph,
-            .hp {
+            .pPleaseFill,
+            .h1BookFree {
                 margin: 0 auto;
             }
 
             .form1 {
                 width: 70%;
-                margin-top: 2vh;
+                margin-top: 0vh;
             }
 
-            input[type="text"] {
+            input[type="text"],
+            input[type="email"],
+            input[type="tel"] {
                 width: 50vw;
                 height: 7vh;
 
@@ -217,12 +236,13 @@
             }
 
             .leftSide {
-                font-size: 30px;
+                font-size: 25px;
                 text-align: center;
                 font-weight: 300;
                 top: 0vh;
                 left: 0vh;
-                top: -29rem;
+                top: -30rem;
+                word-spacing: 2;
                 line-height: 2;
             }
 
@@ -234,10 +254,10 @@
 
 
     <div class="whiteBackground">
-        <div class="hp">
+        <div class="h1BookFree">
             <h1>Book Free Remote Consultation</h1>
         </div>
-        <div class="ph">
+        <div class="pPleaseFill">
             <hr>
             <p>Please fill out the form below and we’ll get back to you to schedule free 30-min
                 initial consultation.
@@ -245,9 +265,9 @@
 
         </div>
         <div class="form1">
-            <input type="text" value="Name">
-            <input type="text" value="Email Address*">
-            <input type="text" value="Phone AddrNumber">
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email Address*">
+            <input type="tel" placeholder="Add Number*">
             <div class="sent">
                 <input type="submit" value="Get Free Consultation">
             </div>

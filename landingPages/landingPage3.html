@@ -80,7 +80,8 @@
             font-size: 15px;
         }
 
-        input[type=text] {
+        input[type=text],
+        input[type=email] {
             width: 400px;
             height: 50px;
             background: #F6F6F624 0% 0% no-repeat padding-box;
@@ -97,9 +98,15 @@
         }
 
         @media(max-width:850px) {
-            .background1 {
+
+            body,
+            html {
                 width: 100vw;
-                height: 100vh;
+                min-height: max-content;
+            }
+
+            input {
+                width: 30%;
             }
 
             .hereNow h1 {
@@ -120,7 +127,7 @@
                 font-size: 10px;
                 position: relative;
                 top: -50px;
-                font-size: 25px;
+                font-size: 18px;
                 margin-bottom: 40px;
             }
 
@@ -133,24 +140,39 @@
                 top: -40px;
             }
 
-            .form1 label {
+
+            div.name1,
+            div.mail1 {
+                width: 100%;
+
+            }
+
+            div.name1 label,
+            div.form1 label {
+                direction: rtl;
                 position: relative;
-                left: 15px;
+                right: -3rem;
             }
 
 
-            input[type=text] {
+            input[type=text],
+            input[type=email] {
                 position: relative;
                 right: -9em;
-                width: 400px;
+                width: 300px;
             }
 
             input[type=submit] {
                 position: relative;
                 right: -9em;
-                width: 400px;
+                width: 300px;
                 height: 45px;
                 color: #2823FD;
+            }
+
+            .name1,
+            .mail1 {
+                width: 40%;
             }
 
         }
@@ -176,7 +198,7 @@
 
                 <div class="mail1">
                     <label for="">דוא״ל</label>
-                    <input type="text">
+                    <input type="email">
                 </div>
 
                 <input type="submit" value="עדכנו אותי">

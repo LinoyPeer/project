@@ -37,6 +37,7 @@
             background-color: #ecebb63f;
             overflow-x: hidden;
             overflow-y: auto;
+            z-index: 10;
         }
 
         * {
@@ -86,7 +87,7 @@
 
         }
 
-        input[type=button] {
+        input[type=submit] {
             width: 15vw;
             background-color: #d0c9c6;
         }
@@ -123,7 +124,7 @@
         .social {
             direction: ltr;
             display: flex;
-            width: 100%;
+            width: 30%;
             position: absolute;
             top: 15px;
             left: 4rem;
@@ -217,7 +218,7 @@
         }
 
         section {
-            width: 90vw;
+            width: 90%;
             height: 15vh;
             margin: 0 auto;
             background: url("https://images.unsplash.com/photo-1465146633011-14f8e0781093?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3450&q=80"),
@@ -253,15 +254,50 @@
         }
 
         @media screen and (max-width: 768px) {
+
+            html,
+            body {
+                background-color: #ecebb63f;
+                overflow-x: hidden;
+                width: 100%;
+                min-height: 100vh;
+            }
+
+
+            .Logoname {
+                font-size: 10px;
+                right: 6rem;
+                top: 1vh;
+
+            }
+
+            img {
+                font-size: 14px;
+                margin-top: 10px;
+            }
+
+            .Logoname {
+                font-size: 10px;
+                right: 6rem;
+                top: 4vh;
+
+            }
+
+            img {
+                font-size: 14px;
+                margin-top: 10px;
+            }
+
             .hamburger {
                 display: block;
-                /*בתצוגה רספונסיבית לטלפון תציג את סמל ההמבורגר*/
                 width: 30%;
                 text-align: center;
                 background-color: #918A87;
                 border-radius: 5px;
                 color: #fff;
                 font-weight: bold;
+                position: relative;
+                left: 7rem;
             }
 
             nav,
@@ -270,6 +306,8 @@
                 'וגם את חלקי ה'עמודות li 'שנמצאים בתוך ה'עמודה ul שנמצאים בתוך 'ה'איזור*/
                 width: 100%;
                 clear: both;
+                position: relative;
+                left: 7rem;
             }
 
             nav {
@@ -290,38 +328,33 @@
 
             }
 
-
             nav ul li a {
                 height: 40px;
                 width: 120px;
                 font-size: 13px;
-                margin-top: 3px;
-                background-color: #c0b8b5;
+                margin-top: 5px;
+                background-color: #e7e4e4;
                 border-radius: 10px;
-                color: #f1e6c2;
-
             }
 
             .hamburger:hover+ul {
                 display: block;
                 width: 100%;
-                position: absolute;
-                left: 9rem;
             }
 
             .social {
                 width: 100px;
-                position: sticky;
+                position: relative;
                 top: 1.4rem;
-                right: 15rem;
+                right: 10rem;
                 gap: 5px;
             }
 
             .fa {
-                width: 30px;
-                height: 30px;
-                font-size: 16px;
-                padding: 8px;
+                width: 25px;
+                height: 25px;
+                font-size: 14px;
+                padding: 6px;
             }
 
 
@@ -362,12 +395,12 @@
                 width: 6rem;
                 position: relative;
                 top: 1rem;
-                right: -1.8rem;
+                right: 0rem;
             }
 
             .social1 {
                 position: relative;
-                right: 11rem;
+                right: 37vw;
             }
 
             #copyRight {
@@ -382,7 +415,7 @@
     <!-- form>(label+input)*3+input -->
     <header>
         <span>
-            <img src="../projectImages/לוגו-אתר-קורות-חיים.png" alt="logo">
+            <img src="../projectImages/websitelogo.png" alt="logo">
             <p class="Logoname">Linoy Pe'er</p>
         </span>
         <span class="social">
@@ -393,23 +426,23 @@
         <nav>
             <div class="hamburger">&#9776;</div>
             <ul>
-                <li><a href="mainPage.html">עמוד הבית</a></li>
+                <li><a href="index.html">עמוד הבית</a></li>
                 <li><a href="aboutPage.html">אודות</a></li>
                 <li><a href="contactPage.html" class="currentpage">צור קשר</a></li>
                 <li><a href="picturePage.html">גלריה</a></li>
-                <li><a href="mainPage.html#myProject">הפרוייקטים שלי</a></li>
+                <li><a href="index.html#myProject">הפרוייקטים שלי</a></li>
             </ul>
         </nav>
     </header>
     <div class="container">
         <form action="" name=" forme" class="theForm">
             <label for="">שם מלא:</label>
-            <input type="text" required>
+            <input class="inputText" type="text" required>
             <label for="">אימייל:</label>
-            <input type="text" required>
+            <input class="inputText" type="email" required>
             <label for="">מלל חופשי:</label>
-            <input type="text" name="write" required>
-            <input type="button" value="שתפו אותי!" id="btn" onclick="on()">
+            <input class="inputText" type="text" name="write" required>
+            <input type="submit" value="שתפו אותי!" id="btn" onclick="on()">
             <p id="sentGoal"></p>
         </form>
         <div class="dontHave">
@@ -434,13 +467,14 @@
     </footer>
 
     <script>
-        // const btn = document.getElementById('btn').addEventListener('click', function () {
-        //     window.open("https://www.google.co.il");
-        // });
+        // כפתור שליחה
         const btn = document.getElementById('btn');
         function on() {
-            let p = document.querySelector('#sentGoal');
-            p.innerText = "ההודעה נשלחה בהצלחה!";
+            const inputText = document.querySelector(".inputText");
+            let sendBtn = document.querySelector('#sentGoal');
+            if (inputText.value !== "") {
+                sendBtn.innerText = "ההודעה נשלחה בהצלחה!";
+            }
         }
         // תפריט למובייל
         document.addEventListener('DOMContentLoaded', function () {

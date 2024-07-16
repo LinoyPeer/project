@@ -30,6 +30,7 @@
         /* ביטול גלילה צידי */
         body {
             overflow: hidden;
+            overflow-y: auto;
         }
 
         /* מרכוז הקונטיינר הראשי */
@@ -40,15 +41,14 @@
             flex-direction: column;
             align-items: center;
             position: relative;
-            top: 100px;
             left: 450px;
             gap: 5px;
         }
 
         /* הגדרת גודל לכל תמונה */
         img {
-            width: 5vw;
-            height: 10vh;
+            width: 10vw;
+            height: 20vh;
         }
 
         /* חלק ראשון 4 תמונות וריבוע מלל אחד ליד השני */
@@ -68,42 +68,55 @@
 
         }
 
-        /* עיצוב ריבוע מלל  */
         .blue {
             background-color: #020253;
-            width: 160px;
+            width: 20vw;
         }
 
         .text1 {
             width: 130px;
+            font-size: 50px;
             text-align: center;
             position: relative;
-            top: 35px;
-            right: -13px;
+            top: 3rem;
+            left: 5.5vw;
         }
 
-        .blue h1 {
+        .blue .text1 h1 {
+            font-size: 30px;
             color: #0EE1DA;
-            font-size: 15px;
             font-family: Assistant;
         }
 
-        .blue p {
+        .blue .text1 p {
+            font-size: 20px;
             color: #F9F9F9;
-            font-size: 10px;
             font-weight: 300;
             font-family: Assistant;
+            margin-top: 10px;
 
         }
 
 
-        /* 4 -תמונות אחד ליד השני חלק שני */
+
+
+        .container2,
         .images2 {
-            display: flex;
-            flex-direction: row;
-            gap: 5px;
+            height: 20vh;
+            width: 42vw;
 
         }
+
+        .images2 {
+            margin-left: 9px;
+        }
+
+        .images2 img {
+            float: left;
+            margin-right: 5px;
+            width: calc(100% / 4 -5px);
+        }
+
 
         /* חלק שלישי 6 תמונות ומלבן מלל אחד ליד השני */
         .container3 {
@@ -121,82 +134,95 @@
             gap: 5px;
         }
 
-        /* עיצוב מלבן מלל  */
         .purple {
             background-color: #8E097C;
-            width: 160px;
+            width: 20vw;
             padding-top: 20px;
+
+        }
+
+        .purple h1,
+        .purple p,
+        .form3 {
+            margin-top: 3vw;
         }
 
         .purple h1 {
             color: #FFFFFF;
-            font-size: 13px;
+            font-size: 17px;
             font-family: Assistant;
             text-align: center;
+
         }
 
         .purple p {
             color: #F9F9F9;
-            font-size: 7px;
+            font-size: 11px;
             font-family: Assistant;
             text-align: center;
             margin: 0 auto;
             padding-top: 6px;
+
         }
 
+
         .form3 {
-            padding-top: 6px;
-            height: 100%;
             text-align: center;
             align-items: center;
             justify-content: center;
+            display: flex;
+            flex-direction: column;
         }
 
         .name1 {
             display: flex;
             flex-direction: column;
+            gap: 20px;
         }
 
         label {
             text-align: right;
             position: relative;
             top: 1px;
-            right: 20px;
+            right: 0px;
             color: #0EE1DA;
             font-family: Heebo;
-            font-size: 5px;
+            font-size: 10px;
             display: flex;
             flex-direction: column;
+            margin-top: 5px;
+        }
+
+        .label {
+            margin-right: -9vw;
         }
 
         input {
-            width: 120px;
-            height: 15px;
+            width: 200px;
+            height: 25px;
             background-color: #E5EEFF;
             border: none;
-            border-bottom: 2px solid #0EE1DA;
-
+            border-bottom: 4px solid #0EE1DA;
         }
 
         textarea {
-            width: 120px;
-            height: 55px;
+            width: 200px;
+            height: 90px;
             resize: none;
             background-color: #E5EEFF;
             border: none;
-            border-bottom: 2px solid #0EE1DA;
-
+            border-bottom: 5px solid #0EE1DA;
         }
 
         input[type="submit"] {
             background-color: #0EE1DA;
-            width: 120px;
-            height: 15px;
-            font-size: 7px;
+            width: 200px;
+            height: 30px;
+            font-size: 10px;
             font-weight: bold;
             color: #011560;
             font-family: Heebo;
-
+            margin-top: 3vh;
         }
 
         @media(max-width:850px) {
@@ -218,13 +244,15 @@
 
             .container1,
             .container2,
-            .container3 {
+            .container3,
+            .purple {
                 display: flex;
                 flex-direction: column-reverse;
+                width: 100%;
             }
 
             .images1 {
-                gap: 5px;
+                gap: 10px;
             }
 
             .blue {
@@ -233,23 +261,23 @@
             }
 
             .text1 {
-                width: 400px;
+                width: 200px;
                 text-align: center;
                 position: relative;
                 top: 70px;
                 right: 0px;
-                left: 25px;
+                left: 5rem;
             }
 
-            .blue h1 {
+            .text1 h1 {
                 color: #0EE1DA;
-                font-size: 40px;
+                font-size: 60px;
                 font-family: Assistant;
             }
 
-            .blue p {
+            .text1 p {
                 color: #F9F9F9;
-                font-size: 30px;
+                font-size: 40px;
                 font-weight: 300;
                 font-family: Assistant;
 
@@ -257,31 +285,32 @@
 
             .images2 {
                 display: flex;
-                flex-direction: column;
+                flex-direction: row;
+                padding-right: 10px;
+                margin-left: -0.1rem;
+                gap: 5px;
             }
 
             .purple {
+                margin-top: 14rem;
                 width: 100vw;
                 height: 70vh;
+                display: flex;
+                flex-direction: column;
             }
 
             .purple h1 {
-                font-size: 40px;
+                font-size: 30px;
                 text-align: center;
             }
 
             .purple p {
-                font-size: 28px;
+                font-size: 15px;
                 padding-top: 0px;
             }
 
             .form3 {
-                padding-bottom: 20vh;
                 height: 100%;
-                display: flex;
-                flex-direction: column;
-
-
             }
 
             .name1+input[type="submit"] {
@@ -299,6 +328,11 @@
                 display: flex;
                 flex-direction: column;
             }
+
+            .label {
+                margin-right: -13rem;
+            }
+
 
             input {
                 width: 80vw;
@@ -382,10 +416,9 @@
                     </div>
                     <div claas="mail1">
                         <label for="">דוא"ל</label>
-                        <input type="text">
+                        <input type="email">
                     </div>
-
-                    <label for="">החוויה שלכם</label>
+                    <label class="label" for="">החוויה שלכם</label>
                     <textarea></textarea>
                     <input type="submit" value="שליחה">
                 </form>

@@ -236,6 +236,28 @@
         }
 
         @media screen and (max-width: 768px) {
+            header {
+                width: 100%;
+            }
+
+            img {
+                margin-right: 0vw;
+            }
+
+            body,
+            html {
+                width: 100%;
+                height: 100vh;
+            }
+
+            .Logoname {
+                font-size: 10px;
+                width: 73px;
+                position: relative;
+                top: 1.5rem;
+                right: 6rem;
+            }
+
             .hamburger {
                 display: block;
                 width: 30%;
@@ -244,7 +266,14 @@
                 border-radius: 5px;
                 color: #fff;
                 font-weight: bold;
+                position: relative;
+                left: 7rem;
             }
+
+            header~span {
+                min-height: max-content;
+            }
+
 
             nav,
             nav ul li {
@@ -252,6 +281,8 @@
                 'וגם את חלקי ה'עמודות li 'שנמצאים בתוך ה'עמודה ul שנמצאים בתוך 'ה'איזור*/
                 width: 100%;
                 clear: both;
+                position: relative;
+                left: 7rem;
             }
 
             nav {
@@ -276,91 +307,150 @@
                 height: 40px;
                 width: 120px;
                 font-size: 13px;
-                margin-top: 3px;
-                background-color: #c0b8b5;
+                margin-top: 5px;
+                background-color: #e7e4e4;
                 border-radius: 10px;
-                color: #f1e6c2;
-
             }
-
 
             .hamburger:hover+ul {
                 display: block;
                 width: 100%;
-                position: absolute;
-                left: 9rem;
             }
 
             .social {
                 width: 100px;
-                position: sticky;
-                top: 1.4rem;
-                right: 15rem;
+                position: relative;
+                top: -0.5rem;
+                right: 10rem;
                 gap: 5px;
-
             }
 
             .fa {
-                width: 30px;
-                height: 30px;
-                font-size: 16px;
-                padding: 8px;
+                width: 25px;
+                height: 25px;
+                font-size: 14px;
+                padding: 6px;
             }
 
 
-
             .titleH1 {
-                font-size: 25px;
+                font-size: 20px;
                 width: 100vw;
             }
 
             .titleP {
-                font-size: 20px;
+                font-size: 15px;
             }
 
             .btn {
                 position: relative;
                 top: 35vh;
-                left: 6vw;
-                margin-left: 40px;
+                left: 12vw;
+                width: 40vw;
+                font-size: 13px;
+                margin-left: 25px;
+                margin-top: 4px;
             }
+
 
             .containerDesktopMobile {
                 display: flex;
                 flex-direction: row;
-                width: 100vw;
+                width: 90%;
+                min-height: max-content;
+                position: relative;
+                gap: 60px;
+                left: 0vw;
+            }
+
+            .containerTitle {
+                width: 80vw;
                 height: 100vh;
                 position: absolute;
-                top: 45rem;
-                left: 10vw;
-                gap: 60px;
+                top: 20vh;
+                left: 9vw;
             }
 
-            .desktop {
-                font-size: 80px;
+            .sectionTitleH1 {
+                width: 80vw;
+                height: 50vh;
             }
 
-            .mobile {
-                font-size: 60px;
+            h1.titleH1 {
+                font-size: 18px;
+                width: 80vw;
+                margin-left: 40px;
+            }
+
+            .titleP {
+                color: #f1e6c2;
+                width: 45vw;
+                font-weight: 200;
+                font-family: "IBM Plex Sans Hebrew", tahoma;
+                font-size: 13px;
+                text-align: center;
+                font-weight: 500;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                direction: rtl;
+            }
+
+
+            div.desktop {
+                height: 30vh;
+                width: 100%;
+            }
+
+            .containerDesktopMobile .desktop img {
+                height: 25vh;
+                width: 65vw;
+                margin-left: 40px;
+            }
+
+            div.mobile {
+                font-size: 50px;
+                width: 25vh;
+
                 position: relative;
                 top: 60vh;
-                right: 40vw;
+                right: 60vw;
+                text-align: center;
             }
 
+            .containerDesktopMobile .mobile img {
+                height: 55vh;
+                width: 70vw;
+            }
+
+            .desktop h2 {
+                font-size: 23px;
+                width: 100%;
+            }
+
+            .mobile h2 {
+                font-size: 23px;
+                width: 50vw;
+                text-align: center;
+            }
+
+
+
             img[alt="codePics"] {
-                top: 24rem;
-                left: 27vw;
+                top: 0rem;
+                left: 6vw;
+                width: 70vw;
             }
 
             #copyRight {
                 font-size: 15px;
                 text-align: right;
                 position: relative;
-                width: 50vw;
-                top: 110rem;
-                left: 10rem;
+                width: 70vw;
+                top: 70rem;
+                left: 0rem;
             }
-
         }
     </style>
 </head>
@@ -368,7 +458,7 @@
 <body>
     <header>
         <span>
-            <img src="../projectImages/לוגו-אתר-קורות-חיים.png" alt="logo">
+            <img src="../projectImages/websitelogo.png" alt="logo">
             <p class="Logoname">Linoy Pe'er</p>
         </span>
         <span class="social">
@@ -379,11 +469,11 @@
         <nav>
             <div class="hamburger">&#9776;</div>
             <ul>
-                <li><a href="../projectPages/mainPage.html">עמוד הבית</a></li>
+                <li><a href="../projectPages/index.html">עמוד הבית</a></li>
                 <li><a href="../projectPages/aboutPage.html">אודות</a></li>
                 <li><a href="../projectPages/contactPage.html">צור קשר</a></li>
                 <li><a href="../projectPages/picturePage.html">גלריה</a></li>
-                <li><a href="../projectPages/mainPage.html#myProject" class="currentpage">הפרוייקטים שלי</a></li>
+                <li><a href="../projectPages/index.html#myProject" class="currentpage">הפרוייקטים שלי</a></li>
             </ul>
         </nav>
     </header>
@@ -395,8 +485,11 @@
                 p,
                 hr</p>
 
-            <button type="button" class="btn btn-outline-warning btnProjectV">לצפייה בפרויקט</button>
-            <button type="button" class=" btn btn-outline-warning btnProjectD">להורדת הפרויקט</button>
+            <a type="submit" class="btn btn-outline-warning btnProjectV" href="../landingPages/landingPage9.html">לצפייה
+                בפרויקט</a>
+            <a type="submit" class=" btn btn-outline-warning btnProjecD"
+                href="../landingPages/landingPagesPictures/landingPageBookFreeDesktopAndMobile.zip"
+                download="landingPageBookFreeDesktopAndMobile.png.zip" download>להורדת הפרויקט</a>
         </section>
         <span>
             <img src="../projectImages/codePics.png" alt="codePics">
@@ -422,29 +515,11 @@
 
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            let btnProjectV = document.querySelector('.btnProjectV');
-            let btnProjectD = document.querySelector('.btnProjectD');
+        var hamburger = document.querySelector('.hamburger');
+        var navMenu = document.querySelector('nav ul');
 
-            btnProjectV.addEventListener('click', () => {
-                window.open("../landingPages/landingPage9.html");
-            });
-
-            btnProjectD.addEventListener('click', () => {
-                const link = document.createElement('a');
-                link.href = "../landingPages/landingPage9.html";
-                link.download = 'landingPage1.html';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-            });
-
-            var hamburger = document.querySelector('.hamburger');
-            var navMenu = document.querySelector('nav ul');
-
-            hamburger.addEventListener('click', function () {
-                navMenu.style.display = navMenu.style.display === 'block' ? 'none' : 'block';
-            });
+        hamburger.addEventListener('click', function () {
+            navMenu.style.display = navMenu.style.display === 'block' ? 'none' : 'block';
         });
     </script>
 </body>

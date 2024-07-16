@@ -34,10 +34,10 @@
         }
 
         .form1 {
-            position: relative;
-            top: -200px;
             display: flex;
-            flex-direction: row;
+            flex-direction: row-reverse;
+            position: relative;
+            left: -20em;
             gap: 30px;
         }
 
@@ -59,14 +59,7 @@
             font-family: Assistant;
         }
 
-        .form1 {
-            display: flex;
-            flex-direction: row-reverse;
-            position: relative;
-            left: -20em;
-            margin-top: 120px;
-            gap: 30px;
-        }
+
 
         .name1,
         .mail1 {
@@ -74,7 +67,8 @@
             flex-direction: column;
         }
 
-        .form1 input[type="text"] {
+        .form1 input[type="text"],
+        .form1 input[type="email"] {
             width: 350px;
             height: 45px;
             background-color: #F6F6F6;
@@ -119,19 +113,21 @@
 
             .form1 {
                 flex-direction: column;
-                margin-top: 90px;
+                margin-top: -120px;
                 align-items: center;
                 position: relative;
                 left: 5vw;
+                width: 90%;
+
             }
 
             .name1,
             .mail1 {
                 width: 100%;
-                max-width: 360px;
             }
 
-            .form1 input[type="text"] {
+            .form1 input[type="text"],
+            .form1 input[type="email"] {
                 width: 100%;
             }
 
@@ -166,7 +162,7 @@
             <div class="mail1"> <!--מחלקה למייל בלבד -->
 
                 <label for="">דוא״ל</label>
-                <input type="text">
+                <input type="email">
             </div>
 
             <input type="submit" value="שליחה">

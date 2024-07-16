@@ -48,7 +48,7 @@ p {
 }
 
 
-.btn[type="button"] {
+.btn[type="submit"] {
     text-align: center;
     background-color: $fillColor3 ;
     border: 1px solid #000;
@@ -56,7 +56,7 @@ p {
     font-weight: 400;
 }
 
-.btn[type="button"]:hover {
+.btn[type="submit"]:hover {
     background-color: $fillColor2 ;
     color: #fff;
     border: 1.5px solid #fff;
@@ -70,7 +70,8 @@ p {
     background-color: $fillColor4;
 }
 
-button[type="click"] {
+button[type="submit"],
+a.btnCv {
     text-align: center;
     background-color: $fillColor3 ;
     border: 1px solid #000;
@@ -78,7 +79,8 @@ button[type="click"] {
     font-weight: 400;
 }
 
-button[type="click"]:hover {
+button[type="submit"]:hover,
+a.btnCv:hover {
     background-color: $fillColor2 ;
     color: #fff;
     border: 1.5px solid #fff;
