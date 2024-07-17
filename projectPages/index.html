@@ -207,6 +207,7 @@
 
         }
 
+
         .imgAboutMe {
             position: relative;
             grid-column: 3/4;
@@ -231,6 +232,13 @@
             /* משוואה 1519=4X */
         }
 
+        .htmlCssH1 {
+            position: relative;
+            left: 35rem;
+            top: 4rem;
+            text-decoration: underline;
+        }
+
         .gridProjects {
             width: 80vw;
             height: 100vh;
@@ -242,6 +250,7 @@
         }
 
         .projects {
+            height: 50vh;
             font-size: 0.9rem;
             text-align: justify;
             padding: 15px;
@@ -264,10 +273,13 @@
             margin-top: 1rem;
         }
 
+
         p[title="project1"] {
             position: relative;
             text-align: center;
             font-size: 15px;
+            line-height: 1.5;
+            margin-top: 2vh;
         }
 
         .projects:hover {
@@ -335,6 +347,113 @@
             position: relative;
             top: 130vh;
             right: 6rem;
+        }
+
+        .gridProjectsJs {
+            width: 80%;
+            position: relative;
+            right: 5rem;
+            margin-top: 50rem;
+            text-align: center;
+        }
+
+        .javaScriptH1 {
+            position: relative;
+            top: 50rem;
+            left: 35rem;
+            text-decoration: underline;
+        }
+
+        .projectsJs {
+            width: 20vw;
+            height: 20vw;
+            font-size: 0.4rem;
+            text-align: justify;
+            padding: 10px;
+            text-align: center;
+            transition: all 0.5s ease-in-out;
+            border: 1px solid #000;
+        }
+
+        img.imgPjs {
+            position: relative;
+            width: 150px;
+            height: 100px;
+            right: -1rem;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .h1Js {
+            font-size: 20px;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        p[title="project2"] {
+            position: relative;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        .projectsJs:hover {
+            background-color: #fff;
+            padding: 5px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px #00000072;
+        }
+
+        button.btnJs {
+            /*כפתור כניסה לפרויקטים*/
+            position: relative;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        form {
+            height: 90vh;
+            position: relative;
+            line-height: 4;
+        }
+
+
+        .formFeedback {
+            position: relative;
+            top: 110vh;
+        }
+
+        .labelArea {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            top: 3vh;
+            gap: 0px;
+        }
+
+        input,
+        #writeSomthing {
+            width: 20vw;
+            height: 5vh;
+        }
+
+        #writeSomthing,
+        label[title=writeMe] {
+            position: relative;
+            bottom: 6rem;
+        }
+
+        #writeSomthing {
+            height: 100px;
+        }
+
+        #btnId {
+            width: 10vw;
+            position: relative;
+            left: 0px;
+            top: -10rem;
+            margin-right: 60rem;
         }
 
         @media screen and (max-width: 768px) {
@@ -489,6 +608,12 @@
                 flex-direction: column;
             }
 
+            .htmlCssH1 {
+                position: relative;
+                left: 4rem;
+                top: 40rem;
+                text-decoration: underline;
+            }
 
             .gridProjects {
                 width: 90vw;
@@ -497,7 +622,7 @@
                 margin: 0 auto;
                 grid-template-rows: auto;
                 grid-template-columns: 1fr;
-                margin-top: 50vh;
+                margin-top: 100vh;
             }
 
             .projects {
@@ -507,7 +632,9 @@
                 text-align: center;
                 transition: all 0.5s ease-in-out;
                 border: 1px solid #000;
+                height: 60vh;
             }
+
 
             .imgP {
                 position: relative;
@@ -523,6 +650,85 @@
 
             .projects p {
                 font-size: 14px;
+                margin-top: 5vh;
+            }
+
+
+            .gridProjectsJs {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .javaScriptH1 {
+                position: relative;
+                top: 230rem;
+                left: 4rem;
+                text-decoration: underline;
+            }
+
+            .btn.btn-outline-warning {
+                position: relative;
+                top: 5vh;
+            }
+
+            .projectsJs {
+                width: 60vw;
+                height: 60vw;
+                font-size: 0.4rem;
+                text-align: justify;
+                padding: 10px;
+                text-align: center;
+                transition: all 0.5s ease-in-out;
+                border: 1px solid #000;
+            }
+
+            img.imgPjs {
+                position: relative;
+                width: 100px;
+                height: 50px;
+                right: -1rem;
+                border: none;
+                border-radius: 5px;
+            }
+
+            .h1Js {
+                font-size: 17px;
+                text-align: center;
+                margin-top: 1rem;
+            }
+
+            p[title="project2"] {
+                position: relative;
+                text-align: center;
+                font-size: 12px;
+                font-weight: 500;
+                line-height: 1.2;
+                margin-top: -0.5vh;
+            }
+
+            .gridProjects.littleAbouttMe.gridProjectsJs {
+                position: relative;
+                top: 200rem;
+                width: 100%;
+                height: 100%;
+            }
+
+            .projectsJs:hover {
+                background-color: #fff;
+                padding: 5px;
+                border-radius: 10px;
+                box-shadow: 2px 2px 5px #00000072;
+            }
+
+            button.btnJs {
+                /*כפתור כניסה לפרויקטים*/
+                position: relative;
+                text-align: center;
+                font-size: 12px;
+                padding: 5px;
+                width: 120px;
+                height: 25px;
+                margin-top: -3vh;
             }
 
 
@@ -533,7 +739,7 @@
                 width: 100%;
                 display: flex;
                 flex-direction: column;
-                top: 180rem;
+                top: 220rem;
             }
 
 
@@ -603,7 +809,7 @@
             }
 
             #copyRight {
-                top: 440vh;
+                top: 540vh;
             }
         }
     </style>
@@ -664,7 +870,7 @@
             </div>
         </article>
     </div>
-
+    <h1 class="htmlCssH1">HTML + CSS Projects</h1>
     <!-- section>.gridProjects>.projects>(img+h1{פרוייקט $}+p)*6 --> <!--מצב התחלתי של Emmet-->
     <section class="gridProjects littleAbouttMe" id="myProject" dir="rtl">
         <!-- grid-item project1 -->
@@ -672,7 +878,7 @@
             <img src="../landingPages/landingPagesPictures/landingPageLetDesktop.png" alt="Project1" class="imgP">
             <h1>פרוייקט 1</h1>
             <p title="project1">'תן לנו להוביל אותך קדימה' הוא דף הנחיתה הראשון שעבדתי עליו.
-                דף זה משלב צבעי כחול עם צהבהב .</p>
+                דף זה בצבעי כחול צהבהב .</p>
             <a rel="stylesheet" href="../landingPages/landingPagePresentation1.html"><button type="submit"
                     class="btn btn-outline-warning">&#171; לעמוד הפרוייקט </button></a>
         </div>
@@ -751,6 +957,93 @@
                     class="btn btn-outline-warning">&#171; לעמוד הפרוייקט </button></a>
         </div>
     </section>
+    <!-- *************js************** -->
+    <h1 class="javaScriptH1">JavaScript Projects</h1>
+    <section class="gridProjects littleAbouttMe gridProjectsJs" id="myProject" dir="rtl">
+        <!-- grid-item project1 -->
+        <div class="projectsJs">
+            <img src="../ProjectsJs/images/imageOfProject1.png" alt="project1" class="imgPjs">
+            <h1 class="h1Js">פרוייקט 1</h1>
+            <p title="project2">'רשימת הקניות שלי' <br> הוא פרוייקט שמקנה לנו את האפשרות לבצע קניות באופן מאורגן.</p>
+            <a rel="stylesheet" href="../ProjectsJs/projectsPresentation/jsPresentation1.html"><button type="submit"
+                    class="btn btn-outline-warning btnJs">&#171; לעמוד הפרוייקט </button></a>
+        </div>
+        <!-- grid-item project2 -->
+        <div class="projectsJs">
+            <img src="../ProjectsJs/images/imageOfProject2.png" alt="Project2" class="imgPjs">
+            <h1 class="h1Js">פרוייקט 2</h1>
+            <p title="project2">'איקס עיגול' <br> הוא פרוייקט שמשלב משחק איקס עיגול מול המחשב וגם שני שחקנים.
+            </p>
+            <a rel="stylesheet" href="../ProjectsJs/projectsPresentation/jsPresentation2.html"><button type="submit"
+                    class="btn btn-outline-warning btnJs">&#171; לעמוד הפרוייקט </button></a>
+        </div>
+        <!-- grid-item project2 -->
+        <div class="projectsJs">
+            <img src="../ProjectsJs/images/imageOfProject3.png" alt="Project3" class="imgPjs">
+            <h1 class="h1Js">פרוייקט 3</h1>
+            <p title="project2">'גלה את מזג האוויר' <br> הוא פרוייקט שמקנה לנו אפשרות לבדוק את מזג האוויר ברחבי העולם,
+                כולל פרטים נוספים.</p>
+            <a rel="stylesheet" href="../ProjectsJs/projectsPresentation/jsPresentation3.html">
+                <button type="submit" class="btn btn-outline-warning btnJs">&#171; לעמוד הפרוייקט </button></a>
+        </div>
+        <!-- grid-item project2 -->
+        <div class="projectsJs">
+            <img src="../ProjectsJs/images/imageOfProject4.png" alt="Project4" class="imgPjs">
+            <h1 class="h1Js">פרוייקט 4</h1>
+            <p title="project2">'בונה מסכים' <br> הוא פרוייקט כיפי שמרחיב את היצירתיות שלנו עם בניית מרובעים בעיצובים
+                שונים.
+            </p>
+            <a rel="stylesheet" href="../ProjectsJs/projectsPresentation/jsPresentation4.html"> <button type="submit"
+                    class="btn btn-outline-warning btnJs">&#171; לעמוד הפרוייקט </button></a>
+        </div>
+        <!-- grid-item project2 -->
+        <div class="projectsJs">
+            <img src="../projectImages/profile-image.jpg" alt="Project5" class="imgPjs">
+            <h1 class="h1Js">פרוייקט 5</h1>
+            <p title="project2">'ייעוץ חינם' הוא דף הנחיתה החמישי שעבדתי עליו. 
+                דף הנחיתה שהכי אהבתי.</p>
+            <a rel="stylesheet" href="../landingPages/landingPagePresentation5.html"> <button type="submit"
+                    class="btn btn-outline-warning btnJs">&#171;
+                    לעמוד הפרוייקט
+                </button></a>
+        </div>
+        <!-- grid-item project2 -->
+        <div class="projectsJs">
+            <img src="../projectImages/profile-image.jpg" alt="Project6" class="imgPjs">
+            <h1 class="h1Js">פרוייקט 6</h1>
+            <p title="project2">'לגלות את העולם' זהו הדף נחיתה שישי שעבדתי עליו. אני אהבתי אותו מפעת התמונות.
+            </p>
+            <a rel="stylesheet" href="../landingPages/landingPagePresentation6.html"> <button type="submit"
+                    class="btn btn-outline-warning btnJs">&#171; לעמוד הפרוייקט </button></a>
+        </div>
+        <div class="projectsJs">
+            <img src="../projectImages/profile-image.jpg" alt="Project6" class="imgPjs">
+            <h1 class="h1Js">פרוייקט 7</h1>
+            <p title="project2">'משהו טוב מתבשל' זהו הפרוייקט השביעי שעבדתי עליו, אהבתי אותו כי אני אוהבת לבשל.
+            </p>
+            <a rel="stylesheet" href="../landingPages/landingPagePresentation7.html"> <button type="submit"
+                    class="btn btn-outline-warning btnJs">&#171; לעמוד הפרוייקט </button></a>
+        </div>
+        <div class="projectsJs">
+            <img src="../projectImages/profile-image.jpg" alt="Project6" class="imgPjs">
+            <h1 class="h1Js">פרוייקט 8</h1>
+            <p title="project2">'מבצע חורף' הוא הפרוייקט השמיני שעבדתי עליו. הרעיון נלקח מטמפלט עמוד נחיתה של
+                אלמנטור.
+            </p>
+            <a rel="stylesheet" href="../landingPages/landingPagePresentation8.html"> <button type="submit"
+                    class="btn btn-outline-warning btnJs">&#171; לעמוד הפרוייקט </button></a>
+        </div>
+        <div class="projectsJs">
+            <img src="../projectImages/profile-image.jpg" alt="Project6" class="imgPjs">
+            <h1 class="h1Js">פרוייקט 9</h1>
+            <p title="project2">'ספר חינם' הוא הפרוייקט השמיני שעבדתי עליו. הרעיון נלקח מטמפלט עמוד נחיתה של
+                אלמנטור. </p>
+            <a rel="stylesheet" href="../landingPages/landingPagePresentation9.html"> <button type="submit"
+                    class="btn btn-outline-warning btnJs">&#171; לעמוד הפרוייקט </button></a>
+        </div>
+    </section>
+    <!-- ************s************** -->
+
     <form action="" class="formFeedback">
         <!-- כותרת לטופס -->
         <div class="labelArea" dir="rtl">

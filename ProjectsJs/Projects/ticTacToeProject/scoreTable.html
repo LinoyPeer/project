@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Score Table</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #783;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Score Table</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Game Time</th>
+                <th>Winner</th>
+                <th>type Of Game</th>
+            </tr>
+        </thead>
+        <tbody id="scoreTableBody">
+            <!-- השורות יתמלאו דרך JavaScript -->
+        </tbody>
+    </table>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let dataLocal = JSON.parse(localStorage.getItem('data')) || [];
+            let tableBody = document.getElementById('scoreTableBody');
+
+            dataLocal.forEach(game => {
+                let row = document.createElement('tr');
+
+                let dateCell = document.createElement('td');
+                dateCell.textContent = game.DateTime;
+                row.appendChild(dateCell);
+
+                let timeCell = document.createElement('td');
+                timeCell.textContent = game.Time;
+                row.appendChild(timeCell);
+
+                let gameTimeCell = document.createElement('td');
+                gameTimeCell.textContent = game.GameTime;
+                row.appendChild(gameTimeCell);
+
+                let winnerCell = document.createElement('td');
+                winnerCell.textContent = game.TheWinner;
+                row.appendChild(winnerCell);
+
+                let typeCell = document.createElement('td');
+                typeCell.textContent = game.type;
+                row.appendChild(typeCell);
+
+                tableBody.appendChild(row);
+            });
+        });
+    </script>
+</body>
+
+</html>
