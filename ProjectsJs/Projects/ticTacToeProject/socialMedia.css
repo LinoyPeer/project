@@ -1,0 +1,22 @@
+input[type="text"],
+input[type="email"],
+input[type="password"],
+#inputState {
+    width: 13vw;
+}
+
+input[type="text"],
+input[type="email"],
+label[for="inputEmail4"],
+label[for="inputName4"],
+label[for="inputCity"],
+label[for="gridCheck"],
+#gridCheck,
+.btn {
+    position: relative;
+    left: 30vw;
+}
+
+input[for="inputEmail4"] {
+    width: 20vw;
+}
