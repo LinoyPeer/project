@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Score Table</title>
+    <!-- logo -->
+    <link rel="icon" type="image/x-icon" href="./ticTacToeLogo.png">
     <style>
         table {
             width: 100%;
@@ -46,38 +48,7 @@
         </tbody>
     </table>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            let dataLocal = JSON.parse(localStorage.getItem('data')) || [];
-            let tableBody = document.getElementById('scoreTableBody');
-
-            dataLocal.forEach(game => {
-                let row = document.createElement('tr');
-
-                let dateCell = document.createElement('td');
-                dateCell.textContent = game.DateTime;
-                row.appendChild(dateCell);
-
-                let timeCell = document.createElement('td');
-                timeCell.textContent = game.Time;
-                row.appendChild(timeCell);
-
-                let gameTimeCell = document.createElement('td');
-                gameTimeCell.textContent = game.GameTime;
-                row.appendChild(gameTimeCell);
-
-                let winnerCell = document.createElement('td');
-                winnerCell.textContent = game.TheWinner;
-                row.appendChild(winnerCell);
-
-                let typeCell = document.createElement('td');
-                typeCell.textContent = game.type;
-                row.appendChild(typeCell);
-
-                tableBody.appendChild(row);
-            });
-        });
-    </script>
+    <script src="scoreTable.js"></script>
 </body>
 
 </html>

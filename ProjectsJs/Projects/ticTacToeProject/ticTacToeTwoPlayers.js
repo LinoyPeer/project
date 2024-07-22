@@ -60,9 +60,6 @@ console.log(`The game lasted ${minutes}:${seconds < 10 ? '0' : ''}${seconds} Min
 let fullTime = `${minutes}:${seconds < 10 ? '0' : ''
     }${seconds}`;
 let objectData = { GameTime: fullTime };
-let objectJson = JSON.stringify(objectData);
-localStorage.setItem("data", objectJson);
-
 
 function dataStorage(winner) {
     let endTime = new Date();
@@ -84,9 +81,9 @@ function dataStorage(winner) {
         type: typeOfGame,
     };
 
-    let dataLocal = JSON.parse(localStorage.getItem('dataOfTwoPlayers')) || [];
-    dataLocal.push(objectData);
-    localStorage.setItem('dataOfTwoPlayers', JSON.stringify(dataLocal));
+    let dataLocalOfTwoPlayers = JSON.parse(localStorage.getItem('dataOfTwoPlayers')) || [];
+    dataLocalOfTwoPlayers.push(objectData);
+    localStorage.setItem('dataOfTwoPlayers', JSON.stringify(dataLocalOfTwoPlayers));
 
     window.location.href = 'scoreTable.html';
 }

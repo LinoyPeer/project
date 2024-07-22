@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .register-container {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+            display: block;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1e7e34;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="register-container">
+        <h2>Register</h2>
+        <form>
+            <input type="text" id="nameInput" + 6.0 placeholder="Full Name" required />
+            <input type="text" id="userNameInput" placeholder="Username" required />
+            <input type="email" id="emailInput" placeholder="Email Address" required />
+            <input type="password" id="passwordInput" placeholder="Password" required />
+            <button type="button" id="registerButton">Register</button>
+        </form>
+    </div>
+    <script>
+        //validation
+        function containsLetter(input) {
+            for (let i = 0; i < input.length; i++) {
+                if (input[i] >= 'A' && input[i] <= 'Z' || input[i] >= 'a' && input[i] <= 'z') {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function containsSymbol(input) {
+            const symbolCharacters = "!@#$%^&*()_+=-[]{};':\"\\|,.<>/?";
+
+            for (let i = 0; i < input.length; i++) {
+                if (symbolCharacters.includes(input[i])) {
+                    return true;
+                }
+            }
+            return false;
+
+        }
+
+        function validateFields(name, username, password) {
+            if (name.length < 2) {
+                alert("The user must be minimum 2 charactres");
+                return false;
+            }
+            if (username.length < 2) {
+                alert("The user must be minimum 2 charactres");
+                return false;
+            }
+
+            let usersLocal = JSON.parse(localStorage.getItem('users')) || [];
+            let userWithSameUsername = usersLocal.find((user) => user.username == username);
+            if (userWithSameUsername) {
+                alert("This user name is alreadt token");
+                return false;
+            }
+
+
+            if (!containsSymbol(password) || !containsLetter(password) || (password.length < 8 && password.length > 20)) {
+                alert("The password must be 8 to 20 chars and must have one letter and one symbol");
+                return false;
+            }
+            return true;
+        }
+        function registerUser(name, username, email, password) {
+            let newUser = {
+                name: name,
+                username: username,
+                email: email,
+                password: password,
+                isAdmin: false,
+                lastLogged: new Date(),
+
+            };
+            let usersLocal = JSON.parse(localStorage.getItem('users'));
+            if (usersLocal == null) {
+                usersLocal = [];
+            }
+            // usersLocal == null ? usersLocal = [] : usersLocal = JSON.parse(localStorage.getItem('users'));
+            usersLocal.push(newUser);
+            localStorage.setItem('users', JSON.stringify(usersLocal));
+            window.location.href = 'index.html';
+        }
+
+        document.querySelector('#registerButton').addEventListener('click', () => {
+            let name = document.getElementById("nameInput").value;
+            let username = document.getElementById("userNameInput").value;
+            let email = document.getElementById("emailInput").value;
+            let password = document.getElementById("passwordInput").value;
+
+            if (validateFields(name, username, email, password)) {
+                registerUser(name, username, email, password);
+            }
+        })
+
+
+
+
+
+
+
+        //save
+        //navigation
+
+    </script>
+</body>
+
+</html>

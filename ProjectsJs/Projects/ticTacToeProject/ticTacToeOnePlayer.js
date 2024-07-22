@@ -136,9 +136,9 @@ function dataStorage(winner) {
         type: typeOfGame,
     };
 
-    let dataLocal = JSON.parse(localStorage.getItem('data')) || [];
-    dataLocal.push(objectData);
-    localStorage.setItem('data', JSON.stringify(dataLocal));
+    let dataLocalOfOnePlayer = JSON.parse(localStorage.getItem('dataOfOnePlayer')) || [];
+    dataLocalOfOnePlayer.push(objectData);
+    localStorage.setItem('dataOfOnePlayer', JSON.stringify(dataLocalOfOnePlayer));
 
     window.location.href = 'scoreTable.html';
 }

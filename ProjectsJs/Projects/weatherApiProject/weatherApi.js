@@ -24,28 +24,21 @@ function weatherOfCity(city) {
             // שם
             console.log(`The name of the city is: ${city}`);
             nameDiv.innerHTML = `
-            <style>
-            h1 {
-            font-size: 25px;
-                }
-            p {
-            font-size: 50px;
-                }
-        </style>
             <h1>Name</h1>
             <hr>
-            <br> <p style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">${city.charAt(0).toUpperCase() + city.slice(1).toLowerCase()}</p>`;
+            <br>
+            <p style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); font-size:40px; margin-top:-20px">${city.charAt(0).toUpperCase() + city.slice(1).toLowerCase()}</p>`;
 
             // שעה
             let time = new Date((data.dt) * 1000).toLocaleTimeString();
             console.log(`The time in ${city} is: ${time}`);
             timeDiv.innerHTML = `
             <h1>Time</h1>
-            <h2 style="font-size: 1rem;" >UTC+3 time</h2
             <hr>
+            <h2>UTC+3 time</h2
             <br> 
             <p>${time}<p>
-            <img src="clockImg.png" alt="Sun-Img" width="110px" height="110px" style="margin-top: 1rem;" style="margin-left: 23rem; " style="border-radius: 10px;">
+            <img src="clockImg.png" alt="Time-Img" width="110px" height="110px" style="margin-top: 1rem;" style="margin-left: 23rem; " style="border-radius: 10px;">
             `;
 
             // טמפרטורה
@@ -55,35 +48,37 @@ function weatherOfCity(city) {
             <hr>
             <br>
             <p>${data.main.temp}°C</p>
-            <img src="TempImg.png" alt="temp-Img" width="120px" height="80px" style="border-radius: 10px style="margin-top: 15rem; ">
+            <img src="TempImg.png" alt="Temp-Img" width="120px" height="80px" style="border-radius: 10px style="margin-top: 15rem; ">
             `;
 
             // תמונה
             let imgCityWeather = data.weather[0].icon;
             let imgOfWeather = document.createElement('img');
             imgOfWeather.src = `https://openweathermap.org/img/wn/${imgCityWeather}.png`;
-            imgOfWeather.style.width = '10rem';
-            imgOfWeather.style.height = '10rem';
+            imgOfWeather.style.width = '5rem';
+            imgOfWeather.style.height = '5rem';
             imgSrc.innerHTML = '';
             imgSrc.appendChild(imgOfWeather);
             console.log(`The picture in ${city} is: ${imgOfWeather.src}`);
+
 
             // זריחה
             let sunriseTime = new Date((data.sys.sunrise) * 1000).toLocaleTimeString();
             console.log(`The sunrise time in ${city} is:${sunriseTime}`);
             sunriseDiv.innerHTML = `
             <h1>Sunrise</h1>
-            <h2 style="font-size: 1rem;" >UTC+3 time</h2
             <hr>
-            <br> ${sunriseTime}`;
+            <h2>UTC+3 time</h2
+            <br>
+            <p>${sunriseTime}</p>`;
 
             // שקיעה
             let sunsetTime = new Date((data.sys.sunset) * 1000).toLocaleTimeString();
             console.log(`The sunset time in ${city} is: ${sunsetTime}`);
             sunsetDiv.innerHTML = `
             <h1>Sunset</h1>
-            <h2 style="font-size: 1rem;" >UTC+3 time</h2
             <hr>
+            <h2>UTC+3 time</h2
             <br>
             <p>${sunsetTime}</p>
             <img src="SunImg.png" alt="Sun-Img" width="150px" height="150px" style="margin-top: 9rem;" style="margin-left: 23rem; " style="border-radius: 10px;">`;
@@ -103,7 +98,8 @@ function weatherOfCity(city) {
             humidityDiv.innerHTML = `
             <h1>Humidity</h1>
             <hr>
-            <br>${data.main.humidity}%`;
+            <br>
+            <p>${data.main.humidity}%</p>`;
         })
         .catch((error) => {
             console.log(error);
