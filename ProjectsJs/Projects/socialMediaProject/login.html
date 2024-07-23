@@ -7,6 +7,10 @@
     <title>Login Page</title>
     <style>
         body {
+            background-image: url("socialMediaBg.png");
+            background-repeat: no-repeat;
+            background-position: 50% 0;
+            background-size: cover;
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             display: flex;
@@ -20,7 +24,7 @@
             background: white;
             padding: 20px;
             border-radius: 5px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 9px 7px 30px #00000083;
         }
 
         h2 {
@@ -32,7 +36,9 @@
             width: 100%;
             padding: 10px;
             margin: 10px 0;
-            border: 1px solid #ddd;
+            background-color: #a7285f10;
+            border: 3px solid #a7285f4a;
+            border-radius: 5px;
             box-sizing: border-box;
             display: block;
         }
@@ -40,7 +46,7 @@
         button {
             width: 100%;
             padding: 10px;
-            background-color: #007bff;
+            background-color: #a7285f95;
             color: white;
             border: none;
             border-radius: 5px;
@@ -48,12 +54,32 @@
         }
 
         button:hover {
-            background-color: #0056b3;
+            background-color: #a7285fc2;
+        }
+
+        #logoutButton {
+            position: absolute;
+            width: 13vw;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #a7285f95;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 3;
+        }
+
+        #logoutButton:hover {
+            background-color: #a7285fc2;
         }
     </style>
 </head>
 
 <body>
+    <button id="logoutButton" onclick="logout()">Exit To Sign-Up Page</button>
+
     <div class="login-container">
         <h2>Login</h2>
         <form>
@@ -67,7 +93,7 @@
         document.getElementById("loginButton").addEventListener("click", () => {
             let username = document.getElementById("usernameInput").value;
             let password = document.getElementById("passwordInput").value;
-            let users = JSON.parse(localStorage.getItem("users")) || [];
+            let users = JSON.parse(localStorage.getItem("socialMediaUsers")) || [];
             let userThatTryToLogin = users.find(
                 (user) => user.username === username && user.password === password
             );
@@ -83,7 +109,9 @@
 
         });
 
-
+        function logout() {
+            window.open("register.html");
+        }
     </script>
 </body>
 

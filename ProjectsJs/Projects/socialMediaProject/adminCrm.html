@@ -7,28 +7,49 @@
     <title>Admin CRM</title>
     <style>
         table {
-            width: 100%;
             border-collapse: collapse;
+            width: 100%;
+            padding: 10px;
+            background-color: #a7285f10;
+            border: 3px solid #a7285f4a;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: tahoma;
+            font-weight: 300;
+            text-decoration: underline;
         }
 
         th,
         td {
-            border: 1px solid #ddd;
+            font-family: tahoma;
+            font-size: 14px;
+            border: 0px;
+            border: 3px solid #a7285f4a;
+            background-color: #a7285f24;
             padding: 8px;
-            text-align: left;
+            text-align: center;
         }
 
         th {
-            background-color: #f2f2f2;
+            font-weight: 600;
+            border: 3px solid #a7285f57;
         }
 
-        .deleteButton {
+        #btnClear {
+            background-color: #a7285f95;
             color: white;
-            background-color: red;
             border: none;
-            padding: 5px 10px;
             border-radius: 5px;
             cursor: pointer;
+            width: 70px;
+            height: 20px;
+            font-size: 12px;
+        }
+
+        #btnClear:hover {
+            background-color: #a7285fb5;
         }
     </style>
 </head>
@@ -38,7 +59,7 @@
     <table id="usersTable">
         <thead>
             <tr>
-                <th>Name</th>
+                <th>Full Name</th>
                 <th>Username</th>
                 <th>Email</th>
                 <th>Last Logged</th>
@@ -52,18 +73,18 @@
     </table>
 
     <script>
-        let users = JSON.parse(localStorage.getItem("users")) || [];
+        let DatasocialMediaUsers = JSON.parse(localStorage.getItem("socialMediaUsers")) || [];
         let dataForTable = "";
-        users.forEach((user, index) => {
+        DatasocialMediaUsers.forEach((user, index) => {
             dataForTable += `
         <tr>
-        <td>${user.name}</td>
+        <td>${user.fullName}</td>
         <td>${user.username}</td>
         <td>${user.email}</td>
         <td>${user.lastLogged}</td>
         <td>${user.isAdmin}</td>
         <td>
-            <button onclick="deleteUser(${index})">DELETE</button>
+            <button id="btnClear" onclick="deleteUser(${index})">DELETE</button>
         </td>
         </tr> `;
         });
@@ -71,8 +92,8 @@
         tableBody.innerHTML = dataForTable;
         function deleteUser(index) {
             if (confirm("Are you sure you want to delete this user?")) {
-                users.splice(index, 1);
-                localStorage.setItem("users", JSON.stringify(users));
+                DatasocialMediaUsers.splice(index, 1);
+                localStorage.setItem("socialMediaUsers", JSON.stringify(DatasocialMediaUsers));
                 location.reload();
             }
         }

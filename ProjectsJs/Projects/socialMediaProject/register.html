@@ -7,6 +7,10 @@
     <title>Register Page</title>
     <style>
         body {
+            background-image: url("socialMediaBg.png");
+            background-repeat: no-repeat;
+            background-position: 50% 0;
+            background-size: cover;
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             display: flex;
@@ -20,7 +24,7 @@
             background: white;
             padding: 20px;
             border-radius: 5px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 9px 7px 30px #00000083;
         }
 
         h2 {
@@ -33,7 +37,9 @@
             width: 100%;
             padding: 10px;
             margin: 10px 0;
-            border: 1px solid #ddd;
+            background-color: #a7285f10;
+            border: 3px solid #a7285f4a;
+            border-radius: 5px;
             box-sizing: border-box;
             display: block;
         }
@@ -41,7 +47,7 @@
         button {
             width: 100%;
             padding: 10px;
-            background-color: #28a745;
+            background-color: #a7285f95;
             color: white;
             border: none;
             border-radius: 5px;
@@ -49,7 +55,7 @@
         }
 
         button:hover {
-            background-color: #1e7e34;
+            background-color: #a7285fc2;
         }
     </style>
 </head>
@@ -62,7 +68,7 @@
             <input type="text" id="userNameInput" placeholder="Username" required />
             <input type="email" id="emailInput" placeholder="Email Address" required />
             <input type="password" id="passwordInput" placeholder="Password" required />
-            <button type="button" id="registerButton">Register</button>
+            <button type="button" id="registerButton">Sign Up</button>
         </form>
     </div>
     <script>
@@ -88,8 +94,8 @@
 
         }
 
-        function validateFields(name, username, password) {
-            if (name.length < 2) {
+        function validateFields(fullName, username, password) {
+            if (fullName.length < 2) {
                 alert("The user must be minimum 2 charactres");
                 return false;
             }
@@ -98,7 +104,7 @@
                 return false;
             }
 
-            let usersLocal = JSON.parse(localStorage.getItem('users')) || [];
+            let usersLocal = JSON.parse(localStorage.getItem('socialMediaUsers')) || [];
             let userWithSameUsername = usersLocal.find((user) => user.username == username);
             if (userWithSameUsername) {
                 alert("This user name is alreadt token");
@@ -112,34 +118,33 @@
             }
             return true;
         }
-        function registerUser(name, username, email, password) {
+        function registerUser(fullName, username, password, email) {
             let newUser = {
-                name: name,
+                fullName: fullName,
                 username: username,
-                email: email,
                 password: password,
+                email: email,
                 isAdmin: false,
                 lastLogged: new Date(),
 
             };
-            let usersLocal = JSON.parse(localStorage.getItem('users'));
+            let usersLocal = JSON.parse(localStorage.getItem('socialMediaUsers'));
             if (usersLocal == null) {
                 usersLocal = [];
             }
-            // usersLocal == null ? usersLocal = [] : usersLocal = JSON.parse(localStorage.getItem('users'));
             usersLocal.push(newUser);
-            localStorage.setItem('users', JSON.stringify(usersLocal));
-            window.location.href = 'index.html';
+            localStorage.setItem('socialMediaUsers', JSON.stringify(usersLocal));
+            window.location.href = 'login.html';
         }
 
         document.querySelector('#registerButton').addEventListener('click', () => {
-            let name = document.getElementById("nameInput").value;
+            let fullName = document.getElementById("nameInput").value;
             let username = document.getElementById("userNameInput").value;
-            let email = document.getElementById("emailInput").value;
             let password = document.getElementById("passwordInput").value;
+            let email = document.getElementById("emailInput").value;
 
-            if (validateFields(name, username, email, password)) {
-                registerUser(name, username, email, password);
+            if (validateFields(fullName, username, password, email)) {
+                registerUser(fullName, username, password, email);
             }
         })
 
