@@ -1,0 +1,24 @@
+// https://api.edamam.com/api/recipes/v2?type=public&q=chicken&app_id=e7b02371&app_key=c4f0fcdcbf33b7f2f9927373cfc6e43f
+
+const app_id = "your_app_id";
+const app_key = "your_app_key";
+const query = "chicken";  // ערך החיפוש
+const url = `https://api.example.com/recipes?app_id=${app_id}&app_key=${app_key}&q=${query}`;
+
+fetch(url)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok ' + response.statusText);
+    }
+    return response.json();
+  })
+  .then(data => {
+    if (data.count === 0) {
+      console.log("No results found.");
+    } else {
+      console.log(data.hits);
+    }
+  })
+  .catch(error => {
+    console.error('There has been a problem with your fetch operation:', error);
+  });

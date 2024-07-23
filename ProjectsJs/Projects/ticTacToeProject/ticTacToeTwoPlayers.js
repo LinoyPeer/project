@@ -102,3 +102,9 @@ window.onload = function () {
         location.reload();
     });
 };
+
+let returnButton = document.querySelector('returnMenuArrow');
+function returnMenu() {
+    window.open('ticTacToMainPage.html');
+
+}

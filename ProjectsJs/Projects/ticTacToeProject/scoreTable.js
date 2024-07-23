@@ -4,6 +4,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let dataLocal2 = JSON.parse(localStorage.getItem('dataOfTwoPlayers')) || [];
     let tableBody = document.getElementById('scoreTableBody');
 
+    // שמירת 10 משחקים אחרונים בלבד
+    if (dataLocal1.length + dataLocal2.length > 10) {
+        dataLocal1 = dataLocal1.slice(0, 5);
+        dataLocal2 = dataLocal2.slice(0, 5);
+    }
+
     dataLocal1.forEach(game => {
         let row = document.createElement('tr');
 

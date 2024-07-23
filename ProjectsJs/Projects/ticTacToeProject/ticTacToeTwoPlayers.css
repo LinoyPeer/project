@@ -14,6 +14,9 @@ body {
     padding: 20px;
     background-color: #783;
     border-radius: 10px;
+    width: 90vw;
+    max-width: 400px;
+    box-sizing: border-box;
 }
 
 h1 {
@@ -35,10 +38,14 @@ h1 {
 
 .board {
     display: grid;
-    grid-template-columns: repeat(3, 100px);
-    grid-template-rows: repeat(3, 100px);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     gap: 5px;
     margin-bottom: 20px;
+    max-width: 90vw;
+    max-height: 90vw;
+    width: 300px;
+    height: 300px;
 }
 
 .cell {
@@ -70,4 +77,50 @@ h1 {
 .restart-button:hover {
     background-color: #b3cfa399;
     font-size: 20px;
+}
+
+div.returnMenuArrow {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    color: #783;
+    font-weight: 500;
+    font-family: "Ga Maamli",
+        sans-serif;
+    word-spacing: 7px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+div.returnMenuArrow:hover {
+    font-size: 20px;
+    color: #055;
+    font-weight: 700;
+    transition: all 1s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+    .game-container {
+        width: 80vw;
+        max-width: none;
+        padding: 10px;
+    }
+
+    .board {
+        width: 60vw;
+        height: 60vw;
+        margin-left: 1.5rem;
+    }
+
+    div.returnMenuArrow {
+        font-size: 14px;
+        word-spacing: 3px;
+        letter-spacing: 0.5px;
+        margin-right: 2rem;
+    }
+
+    div.returnMenuArrow:hover {
+        font-size: 15px;
+    }
 }
