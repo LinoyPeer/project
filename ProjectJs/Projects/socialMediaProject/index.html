@@ -13,6 +13,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- לינק לBootstrap -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- לינק לפונט Playwrite MX -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+MX:wght@100..400&display=swap" rel="stylesheet">
 
 
 
@@ -552,9 +556,17 @@
             padding: 5px;
         }
 
+        .fa-thumbs-up:hover {
+            color: #000;
+            background-color: #EEEEEE;
+            transition: none;
+            padding: 0px;
+        }
+
+
         .anchorCv {
             text-decoration: none;
-            background-color: #7b256e6c;
+            background-color: #EEEEEE;
             border: 2px #000 solid;
             border-radius: 5px;
             position: relative;
@@ -574,8 +586,28 @@
         }
 
         .imagesPosts {
-            width: 80vw;
+            width: 50vw;
             height: 70vh;
+        }
+
+        .Logoname {
+            font-size: 13px;
+            font-family: "Playwrite MX", cursive;
+            font-weight: 600;
+            position: absolute;
+            left: 2rem;
+            top: 2rem;
+            text-align: left;
+            border-radius: 10px;
+            width: 50vw;
+        }
+
+        hr {
+            width: 98%;
+            color: #000;
+            font-weight: 600;
+            position: absolute;
+            top: 5rem;
         }
     </style>
 
@@ -583,13 +615,17 @@
 
 <body>
 
-    <button id="logoutButton" onclick="logout()">Logout</button>
+    <button style="position: fixed;" id="logoutButton" onclick="logout()">Logout</button>
     <div class="loginWaiter">
         <h1>Page for logged in users</h1>
         <i id="greeting" class="fa fa-spinner fa-spin"></i> Loading..
     </div>
 
-    <div class="mainContainer .animate-spin">
+
+    <div class="mainContainer .animate-spin" style="z-index: 2; ">
+        <p class="Logoname">Linoy Pe'er</p>
+        <hr>
+
         <div class="container">
             <div class="row postingArea">
                 <div class="col-sm-8 col-sm-offset-2">
@@ -645,17 +681,17 @@
                                     </div>
                                 </div>
                                 <div class="post-image">
-                                    <img class="imagesPosts" src="socialImg.png" class="image" alt="image post"><br>
+                                    <img class="imagesPosts" src="/ProjectJs/images/imageOfProject1.png" class="image"
+                                        alt="image post"><br>
                                 </div>
                                 <div class="post-description">
-                                    <h4>Product Shoot</h4>
-                                    <p>Here is a picture of the walkway to our product shoot.</p>
+                                    <h4>my shopping cart</h4>
+                                    <p>This project that gives us the opportunity to shop in an organized manner.<br>
+                                        What do you think about the project?</p>
                                     <div class="stats">
-                                        <a href="javascript:void(0);" class="btn btn-default stat-item">
-                                            <i class="fa fa-thumbs-up icon"></i>228
-                                        </a>
-                                        <a href="javascript:void(0);" class="btn btn-default stat-item">
-                                            <i class="fa fa-share icon"></i>128
+                                        <a id="numberOfLikes" href="javascript:void(0);"
+                                            class="btn btn-default stat-item">
+                                            <i class="fa fa-thumbs-up" id="likeIcon"></i>
                                         </a>
                                     </div>
                                 </div>
@@ -678,7 +714,7 @@
                                                     <h4 class="user">John dOE</h4>
                                                     <h5 class="time">7 minutes ago</h5>
                                                 </div>
-                                                <p>I really love this picture. I really wish i could have been there.
+                                                <p>I really love this.
                                                 </p>
                                             </div>
                                         </li>
@@ -711,156 +747,49 @@
                                             </div>
                                         </li>
                                     </ul>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="col-sm-12">
-                            <div class="panel panel-white post">
-                                <div class="post-heading">
-                                    <div class="pull-left image">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png"
-                                            class="img-circle avatar" alt="user profile image">
-                                    </div>
-                                    <div class="pull-left meta">
-                                        <div class="title h5">
-                                            <a href="#"><b>John Doe</b></a>
-                                            made a post.
-                                        </div>
-                                        <h6 class="text-muted time">1 minute ago</h6>
-                                    </div>
-                                </div>
-                                <div class="post-description">
-                                    <p>Anyone who is interested in helping out with the Mark &amp; Markson dinner party,
-                                        please
-                                        let me know before the week is over.</p>
-                                    <div class="stats">
-                                        <a href="javascript:void(0);" class="btn btn-default stat-item">
-                                            <i class="fa fa-thumbs-up icon"></i>2
-                                        </a>
-                                        <a href="javascript:void(0);" class="btn btn-default stat-item">
-                                            <i class="fa fa-share icon"></i>12
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="post-footer">
-                                    <div class="input-group">
-                                        <input class="form-control" placeholder="Add a comment" type="text">
-                                        <span class="input-group-addon">
-                                            <a href="javascript:void(0);"><i class="fa fa-edit"></i></a>
-                                        </span>
-                                    </div>
-                                    <ul class="comments-list">
-                                        <li class="comment">
-                                            <a class="pull-left" href="javascript:void(0);">
-                                                <img class="avatar"
-                                                    src="https://bootdey.com/img/Content/avatar/avatar3.png"
-                                                    alt="avatar">
-                                            </a>
-                                            <div class="comment-body">
-                                                <div class="comment-heading">
-                                                    <h4 class="user">Gavino Free</h4>
-                                                    <h5 class="time">5 minutes ago</h5>
-                                                </div>
-                                                <p>Sure, I'd help out.</p>
-                                            </div>
-                                            <ul class="comments-list">
-                                                <li class="comment">
-                                                    <a class="pull-left" href="javascript:void(0);">
-                                                        <img class="avatar"
-                                                            src="https://bootdey.com/img/Content/avatar/avatar4.png"
-                                                            alt="avatar">
-                                                    </a>
-                                                    <div class="comment-body">
-                                                        <div class="comment-heading">
-                                                            <h4 class="user">John Doe</h4>
-                                                            <h5 class="time">3 minutes ago</h5>
-                                                        </div>
-                                                        <p>I will email you the details.</p>
-                                                    </div>
-                                                </li>
-                                                <li class="comment">
-                                                    <a class="pull-left" href="javascript:void(0);">
-                                                        <img class="avatar"
-                                                            src="https://bootdey.com/img/Content/avatar/avatar5.png"
-                                                            alt="avatar">
-                                                    </a>
-                                                    <div class="comment-body">
-                                                        <div class="comment-heading">
-                                                            <h4 class="user">John Doe</h4>
-                                                            <h5 class="time">3 minutes ago</h5>
-                                                        </div>
-                                                        <p>Ok, cool.</p>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-12">
-                            <div class="panel panel-white post">
-                                <div class="post-heading">
-                                    <div class="pull-left image">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar5.png"
-                                            class="img-circle avatar" alt="user profile image">
-                                    </div>
-                                    <div class="pull-left meta">
-                                        <div class="title h5">
-                                            <img class="imagesPosts"
-                                                src="../../projectsPresentation/projectPicturesPresetation/picturesPresetationFoodApiDesktop.png">
-                                        </div>
-                                        <h6 class="text-muted time">1 minute ago</h6>
-                                    </div>
-                                </div>
-                                <div class="post-description">
-                                    <div class="stats">
-                                        <a href="javascript:void(0);" class="btn btn-default stat-item">
-                                            <i class="fa fa-thumbs-up icon"></i>2
-                                        </a>
-                                        <a href="javascript:void(0);" class="btn btn-default stat-item">
-                                            <i class="fa fa-share icon"></i>12
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="post-footer">
-                                    <div class="input-group">
-                                        <input class="form-control" placeholder="Add a comment" type="text">
-                                        <span class="input-group-addon">
-                                            <a href="javascript:void(0);"><i class="fa fa-edit"></i></a>
-                                        </span>
-                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <script>
+                <script>
 
-        //יציאה לדף ההתחברות
-        function logout() {
-            window.open("login.html");
-        }
+                    //יציאה לדף ההתחברות
+                    function logout() {
+                        window.open("login.html");
+                    }
 
-        //טעינת הדף מיד לאחר כניסה
-        const loading = document.querySelector('.loginWaiter');
-        setTimeout(function () {
-            loading.style.display = 'none';
-        }, 2000);
+                    //טעינת הדף מיד לאחר כניסה
+                    const loading = document.querySelector('.loginWaiter');
+                    setTimeout(function () {
+                        loading.style.display = 'none';
+                    }, 2000);
 
-        //פעולות לאחר טעינת הדף
-        const mainContainer = document.querySelector('.mainContainer');
-        mainContainer.style.display = 'none';
-        setTimeout(function () {
-            mainContainer.style.display = 'block';
-        }, 2400);
+                    //פעולות לאחר טעינת הדף
+                    const mainContainer = document.querySelector('.mainContainer');
+                    mainContainer.style.display = 'none';
+                    setTimeout(function () {
+                        mainContainer.style.display = 'block';
+                    }, 2400);
 
-    </script>
+
+
+                    let likeIcon = document.getElementById('likeIcon');
+                    likeIcon.style.color = "black";
+                    likeIcon.addEventListener('click', () => {
+                        if (likeIcon.style.color = "black") {
+                            likeIcon.style.color = "green";
+                        }
+                    })
+
+
+
+
+
+
+
+                </script>
 
 </body>
 

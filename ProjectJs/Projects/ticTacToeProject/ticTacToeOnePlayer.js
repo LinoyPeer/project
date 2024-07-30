@@ -57,8 +57,13 @@ window.onload = function () {
 }
 
 function computerTurn() {
+    let computerPosition = checkIfComputerCanBlockThe();
+    if (computerPosition === null) {
+        do {
+            computerPosition = Math.floor(Math.random() * 9);
+        } while (board[computerPosition] !== "");
+    }
     for (let i = 0; i < board.length; i++) {
-        let computerPosition = Math.floor(Math.random() * 9);
         if (board[computerPosition] === "") {
             if (player === 'X') {
                 board[computerPosition] = 'O';
@@ -83,6 +88,21 @@ function computerTurn() {
         }
     }
 }
+
+function checkIfComputerCanBlockTheRival() {
+    for (let i = 0; i < board.length; i++) {
+        if (board[i] === "") {
+            board[i] = player === 'X' ? 'O' : 'X';
+            if (checkWinner() === 1) {
+                board[i] = "";
+                return i;
+            }
+            board[i] = "";
+        }
+    }
+    return null;
+}
+
 
 function checkWinner() {
     if ((board[0] === board[1] && board[1] === board[2]) && board[0] != "" ||
