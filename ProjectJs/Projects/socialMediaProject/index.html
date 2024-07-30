@@ -610,6 +610,12 @@
             top: 5rem;
         }
 
+        .post-description h4:hover {
+            padding: 5px;
+            color: purple;
+            transition: all 0.2s ease-in-out;
+        }
+
         @media(max-width:767px) {
             hr {
                 width: 90%;
@@ -696,13 +702,12 @@
                                     </div>
                                 </div>
                                 <div class="post-image">
-                                    <img class="imagesPosts" src="/ProjectJs/images/imageOfProject1.png" class="image"
+                                    <img class="imagesPosts" src="/ProjectJs/images/imageOfAdminCrm.png" class="image"
                                         alt="image post"><br>
                                 </div>
                                 <div class="post-description">
-                                    <h4>my shopping cart</h4>
-                                    <p>This project that gives us the opportunity to shop in an organized manner.<br>
-                                        What do you think about the project?</p>
+                                    <h4 onclick="crmPageClicker()">Click Here To See The Admin CRM Page</h4>
+                                    <p>What do you think about the project?</p>
                                     <div class="stats">
                                         <a id="numberOfLikes" href="javascript:void(0);"
                                             class="btn btn-default stat-item">
@@ -773,6 +778,11 @@
                     //יציאה לדף ההתחברות
                     function logout() {
                         window.open("login.html");
+                    }
+
+                    // גישה לAdmin CRM
+                    function crmPageClicker() {
+                        window.open("adminCrm.html");
                     }
 
                     //טעינת הדף מיד לאחר כניסה
