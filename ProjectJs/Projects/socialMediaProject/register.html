@@ -57,10 +57,26 @@
         button:hover {
             background-color: #a7285fc2;
         }
+
+        #logoutButton {
+            width: 20vw;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #a7285f95;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 3;
+        }
     </style>
 </head>
 
 <body>
+    <button style="position: fixed;" id="logoutButton" onclick="logout()">To log-in
+        page</button>
     <div class="register-container">
         <h2>Register</h2>
         <form>
@@ -72,6 +88,9 @@
         </form>
     </div>
     <script>
+        function logout() {
+            window.open("login.html");
+        }
         //validation
         function containsLetter(input) {
             for (let i = 0; i < input.length; i++) {
