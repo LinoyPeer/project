@@ -20,7 +20,14 @@
             margin: 0;
         }
 
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 20vw;
+        }
+
         .register-container {
+            height: 60vh;
             background: white;
             padding: 20px;
             border-radius: 5px;
@@ -44,14 +51,42 @@
             display: block;
         }
 
+        input[type="file"] {
+            display: none;
+        }
+
+        label {
+            width: 7vw;
+            height: 1vh;
+            margin-left: 5rem;
+
+        }
+
+        .custom-file-upload {
+            display: inline-block;
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #a7285f7a;
+            color: rgb(0, 0, 0);
+            border: none;
+            border-radius: 4px;
+            font-size: 10px;
+        }
+
+        .custom-file-upload:hover {
+            background-color: #a7285f95;
+        }
+
         button {
-            width: 100%;
+            width: 80%;
             padding: 10px;
             background-color: #a7285f95;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            margin-top: 1rem;
+            margin-left: 2rem;
         }
 
         button:hover {
@@ -71,6 +106,14 @@
             cursor: pointer;
             z-index: 3;
         }
+
+        #display-image {
+            width: 3vw;
+            height: 5vh;
+            border-radius: 50%;
+            margin-left: 8rem;
+            margin-top: 1rem;
+        }
     </style>
 </head>
 
@@ -84,14 +127,40 @@
             <input type="text" id="userNameInput" placeholder="Username" required />
             <input type="email" id="emailInput" placeholder="Email Address" required />
             <input type="password" id="passwordInput" placeholder="Password" required />
+            <label for="file-upload" class="custom-file-upload" id="labelForImg">Upload Your Own Photo
+                <input id="file-upload" type="file" />
+            </label>
+            <img id="display-image" src="/../projectImages/profile-image.jpg" alt="Image Of User Upload" />
             <button type="button" id="registerButton">Sign Up</button>
         </form>
     </div>
     <script>
+
+        const fileUpload = document.querySelector('#file-upload');
+        function uploadImage() {
+
+
+            console.log();
+            const file = fileUpload.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const displayImg = document.getElementById('display-image');
+                    displayImg.src = e.target.result;
+
+                    localStorage.setItem(('savedImage', e.target.result));
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+        fileUpload.addEventListener('change', () => {
+            uploadImage();
+        })
+
         function logout() {
             window.open("login.html");
         }
-        //validation
+
         function containsLetter(input) {
             for (let i = 0; i < input.length; i++) {
                 if (input[i] >= 'A' && input[i] <= 'Z' || input[i] >= 'a' && input[i] <= 'z') {
