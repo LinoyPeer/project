@@ -27,7 +27,7 @@ export class Game {
     start(): void {
         this.intervalId = setInterval(() => {
             this.update();
-        }, 100);
+        }, 100); // Update every 100 milliseconds
     }
 
     update(): void {
@@ -39,6 +39,7 @@ export class Game {
 
         this.snake.move();
 
+        // Check if food is eaten
         if (
             this.snake.body[0].x === this.food.x &&
             this.snake.body[0].y === this.food.y
@@ -48,6 +49,7 @@ export class Game {
             this.score += 10;
         }
 
+        // Check for game over
         if (this.snake.checkCollision(this.gridSize * this.gridSize)) {
             this.gameOver = true;
         }

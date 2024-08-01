@@ -46,16 +46,12 @@ export class Snake {
     checkCollision(gridSize: number): boolean {
         const head = this.body[0];
         if (head.x < 0 || head.x >= gridSize || head.y < 0 || head.y >= gridSize) {
-            alert('YOU LOSE! TRY AGAIN');
-            location.reload();
             return true;
         }
 
         if (this.body.length > 2) {
             for (let i = 1; i < this.body.length; i++) {
                 if (this.body[i].x === head.x && this.body[i].y === head.y) {
-                    alert('YOU LOSE! TRY AGAIN');
-                    location.reload();
                     return true;
                 }
             }
