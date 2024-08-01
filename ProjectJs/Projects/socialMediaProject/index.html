@@ -90,6 +90,23 @@
             font-weight: 300;
         }
 
+        .uploadPost,
+        .uploadPostParagraph {
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            left: 40rem;
+            top: 5rem;
+
+        }
+
+        .uploadPost {
+            position: relative;
+            left: 40rem;
+            top: 5rem;
+            gap: 20px;
+        }
+
 
         @media(max-width:767px) {
             hr {
@@ -101,8 +118,7 @@
             }
 
             #imgOfUser {
-                width: 30vw;
-                height: 16vh;
+                width: 45vw;
                 border-radius: 50%;
             }
 
@@ -165,7 +181,23 @@
         <img id="imgOfUser" src="/../projectImages/profile-image.jpg" alt="Image Of User">
         <h3 id="nameOfUser" class=".ubuntu-light">hello </h3>
     </div>
+    <div class="uploadPost">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368">
+            <path
+                d="M440-320v-326L336-542l-56-58 200-200 200 200-56 58-104-104v326h-80ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z" />
+        </svg>
 
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368">
+            <path
+                d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm40-80h480L570-480 450-320l-90-120-120 160Zm-40 80v-560 560Z" />
+
+        </svg>
+        <div class="uploadPostParagraph">
+            <p>Upload Post</p>
+            <p>Upload Photo</p>
+
+        </div>
+    </div>
     <script>
 
         //יציאה לדף ההתחברות
@@ -203,7 +235,7 @@
             mainContainer.style.display = 'block';
         }, 2400);
 
-        let usersForIndex = JSON.parse(localStorage.getItem('socialMediaUsers'));
+        let usersForIndex = JSON.parse(localStorage.getItem('socialMediaUsers')) || [];
 
 
         function toCapitalTheFirstName(word) {
@@ -215,7 +247,7 @@
 
 
         let nameOfUser = document.getElementById('nameOfUser');
-        if (nameOfUser === -1) {
+        if (nameOfUser) {
             nameOfUser.innerHTML += toCapitalTheFullName(usersForIndex[0].fullName);
             console.log(nameOfUser);
         } else {
