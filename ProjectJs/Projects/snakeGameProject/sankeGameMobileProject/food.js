@@ -14,6 +14,7 @@ export class Food {
     respawn(gridSize, snakePositions) {
         let collisionOrDeviation = true;
         while (collisionOrDeviation) {
+            gridSize = (300 / this.size)
             this.x = getRandomInt(0, gridSize) * this.size;
             this.y = getRandomInt(0, gridSize) * this.size;
             collisionOrDeviation = false;
