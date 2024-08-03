@@ -4,7 +4,7 @@ import { Direction } from "./types.js";
 
 
 export class Game {
-    constructor(canvas, gridSize = 15) {
+    constructor(canvas, gridSize = 20) {
         this.canvas = canvas;
         this.ctx = this.canvas.getContext("2d");
         this.gridSize = gridSize;
