@@ -1,35 +1,57 @@
-import { Game } from "./game.js";
+// import { Game } from "./game.js";
 
-const canvas = document.getElementById("app");
-canvas.width = 300;
-canvas.height = 300;
+// let counterValue = 3;
+// const countdown = document.getElementById('countdown');
+// const counter = document.createElement('div');
+// counter.style.fontSize = '40vw';
+// counter.innerText = counterValue;
+// countdown.appendChild(counter);
 
-const game = new Game(canvas, 20);
+// const timer = setInterval(() => {
+//     counterValue--;
+//     if (counterValue > 0) {
+//         counter.innerText = counterValue;
+//     } else {
+//         clearInterval(timer);
+//         counter.innerText = 'GO!';
+//         setTimeout(() => {
+//             countdown.remove();
+//         }, 1000);
+//     }
+// }, 1000);
+// setTimeout(() => {
 
-game.start();
+//     const canvas = document.getElementById("app");
+//     canvas.width = 300;
+//     canvas.height = 300;
 
-let up = document.querySelector('.up')
-let down = document.querySelector('.down')
-let left = document.querySelector('.left')
-let right = document.querySelector('.right')
+//     const game = new Game(canvas, 20);
 
-up.addEventListener('click', () => {
-    console.log("up");
-    game.handleInput("ArrowUp");
-})
-down.addEventListener('click', () => {
-    console.log("down");
-    game.handleInput("ArrowDown");
+//     game.start();
 
-})
-left.addEventListener('click', () => {
-    console.log("left");
-    game.handleInput("ArrowLeft");
+//     let up = document.querySelector('.up')
+//     let down = document.querySelector('.down')
+//     let left = document.querySelector('.left')
+//     let right = document.querySelector('.right')
 
-})
-right.addEventListener('click', () => {
-    console.log("right");
-    game.handleInput("ArrowRight");
+//     up.addEventListener('click', () => {
+//         console.log("up");
+//         game.handleInput("ArrowUp");
+//     })
+//     down.addEventListener('click', () => {
+//         console.log("down");
+//         game.handleInput("ArrowDown");
 
-})
+//     })
+//     left.addEventListener('click', () => {
+//         console.log("left");
+//         game.handleInput("ArrowLeft");
 
+//     })
+//     right.addEventListener('click', () => {
+//         console.log("right");
+//         game.handleInput("ArrowRight");
+
+//     })
+
+// }, 4000);

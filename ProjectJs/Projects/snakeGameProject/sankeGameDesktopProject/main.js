@@ -1,14 +1,39 @@
 import { Game } from "./game.js";
 
+let counterValue = 3;
+const countdown = document.getElementById('countdown');
+const counter = document.createElement('div');
+counter.style.fontSize = '40vw';
+counter.innerText = counterValue;
+countdown.appendChild(counter);
 const canvas = document.getElementById("app");
-canvas.width = 400;
-canvas.height = 400;
+canvas.style.display = 'none';
 
-const game = new Game(canvas, 20);
+const timer = setInterval(() => {
+    counterValue--;
+    if (counterValue > 0) {
+        counter.innerText = counterValue;
+    } else {
+        clearInterval(timer);
+        counter.innerText = 'GO!';
+        setTimeout(() => {
+            countdown.remove();
+        }, 1000);
+    }
+}, 1000);
 
-document.addEventListener("keydown", (event) => {
-    game.handleInput(event.key);
-});
+setTimeout(() => {
+    const canvas = document.getElementById("app");
+    canvas.style.display = 'block';
+    canvas.width = 400;
+    canvas.height = 400;
 
-game.start();
+    const game = new Game(canvas, 20);
 
+    document.addEventListener("keydown", (event) => {
+        game.handleInput(event.key);
+    });
+
+    game.start();
+
+}, 4000);
