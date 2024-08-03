@@ -1,57 +1,57 @@
-// import { Game } from "./game.js";
+import { Game } from "./game.js";
 
-// let counterValue = 3;
-// const countdown = document.getElementById('countdown');
-// const counter = document.createElement('div');
-// counter.style.fontSize = '40vw';
-// counter.innerText = counterValue;
-// countdown.appendChild(counter);
+let counterValue = 3;
+const countdown = document.getElementById('countdown');
+const counter = document.createElement('div');
+counter.style.fontSize = '40vw';
+counter.innerText = counterValue;
+countdown.appendChild(counter);
 
-// const timer = setInterval(() => {
-//     counterValue--;
-//     if (counterValue > 0) {
-//         counter.innerText = counterValue;
-//     } else {
-//         clearInterval(timer);
-//         counter.innerText = 'GO!';
-//         setTimeout(() => {
-//             countdown.remove();
-//         }, 1000);
-//     }
-// }, 1000);
-// setTimeout(() => {
+const timer = setInterval(() => {
+    counterValue--;
+    if (counterValue > 0) {
+        counter.innerText = counterValue;
+    } else {
+        clearInterval(timer);
+        counter.innerText = 'GO!';
+        setTimeout(() => {
+            countdown.remove();
+        }, 1000);
+    }
+}, 1000);
+setTimeout(() => {
 
-//     const canvas = document.getElementById("app");
-//     canvas.width = 300;
-//     canvas.height = 300;
+    const canvas = document.getElementById("app");
+    canvas.width = 300;
+    canvas.height = 300;
 
-//     const game = new Game(canvas, 20);
+    const game = new Game(canvas, 20);
 
-//     game.start();
+    game.start();
 
-//     let up = document.querySelector('.up')
-//     let down = document.querySelector('.down')
-//     let left = document.querySelector('.left')
-//     let right = document.querySelector('.right')
+    let up = document.querySelector('.up')
+    let down = document.querySelector('.down')
+    let left = document.querySelector('.left')
+    let right = document.querySelector('.right')
 
-//     up.addEventListener('click', () => {
-//         console.log("up");
-//         game.handleInput("ArrowUp");
-//     })
-//     down.addEventListener('click', () => {
-//         console.log("down");
-//         game.handleInput("ArrowDown");
+    up.addEventListener('click', () => {
+        console.log("up");
+        game.handleInput("ArrowUp");
+    })
+    down.addEventListener('click', () => {
+        console.log("down");
+        game.handleInput("ArrowDown");
 
-//     })
-//     left.addEventListener('click', () => {
-//         console.log("left");
-//         game.handleInput("ArrowLeft");
+    })
+    left.addEventListener('click', () => {
+        console.log("left");
+        game.handleInput("ArrowLeft");
 
-//     })
-//     right.addEventListener('click', () => {
-//         console.log("right");
-//         game.handleInput("ArrowRight");
+    })
+    right.addEventListener('click', () => {
+        console.log("right");
+        game.handleInput("ArrowRight");
 
-//     })
+    })
 
-// }, 4000);
+}, 4000);
