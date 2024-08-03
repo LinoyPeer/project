@@ -19,7 +19,7 @@ export class Game {
     start() {
         this.intervalId = setInterval(() => {
             this.update();
-        }, 100); // Update every 100 milliseconds
+        }, 100);
     }
 
     update() {

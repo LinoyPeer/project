@@ -4,7 +4,7 @@ import { getRandomInt } from "./helpers.js";
 export class Food {
     x = 0;
     y = 0;
-    size = 15;
+    size = 20;
     constructor(gridSize, snakePositions) {
         this.x = 0;
         this.y = 0;
