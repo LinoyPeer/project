@@ -10,6 +10,7 @@
         font-size: 0vw;
         opacity: 50%;
         color: #040;
+        z-index: 3;
     }
 
     body {
@@ -42,6 +43,7 @@
         height: 40vh;
         border-radius: 20%;
         box-shadow: 5px 5px 5px 1px #0000003b;
+        z-index: 2;
     }
 
     .upAndDown {
@@ -70,5 +72,10 @@
         width: 70vw;
         gap: 8rem;
 
+    }
+
+    #app {
+        position: relative;
+        z-index: 1;
     }
 }

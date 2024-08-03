@@ -1,7 +1,15 @@
 import { Game } from "./game.js";
 
+const canvas = document.getElementById("app");
+let directionsDiv = document.querySelector('.containerForArrowDirections');
+canvas.style.opacity = '0.4'
+directionsDiv.style.opacity = '0.4'
+
+
 let counterValue = 3;
+
 const countdown = document.getElementById('countdown');
+
 const counter = document.createElement('div');
 counter.style.fontSize = '40vw';
 counter.innerText = counterValue;
@@ -24,6 +32,9 @@ setTimeout(() => {
     const canvas = document.getElementById("app");
     canvas.width = 300;
     canvas.height = 300;
+    canvas.style.opacity = '1'
+    directionsDiv.style.opacity = '1'
+
 
     const game = new Game(canvas, 20);
 
