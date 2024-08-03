@@ -1,17 +1,14 @@
-import { Direction } from "../types";
-import { getOpositeDirection } from "../utils/helpers";
+import { Direction } from "./types.js";
+import { getOpositeDirection } from "./helpers.js";
 
 export class Snake {
-    body: { x: number; y: number }[];
-    direction: Direction;
-    size: number = 20;
-
-    constructor(initialPosition: { x: number; y: number }) {
+    constructor(initialPosition) {
         this.body = [initialPosition];
         this.direction = Direction.Right;
+        this.size = 20;
     }
 
-    move(): void {
+    move() {
         const newHead = { ...this.body[0] };
         switch (this.direction) {
             case Direction.Right:
@@ -32,18 +29,18 @@ export class Snake {
         this.body.pop();
     }
 
-    grow(): void {
+    grow() {
         const tail = this.body[this.body.length - 1];
         this.body.push({ x: tail.x, y: tail.y });
     }
 
-    turn(newDirection: Direction): void {
-        if (newDirection != getOpositeDirection(this.direction)) {
+    turn(newDirection) {
+        if (newDirection !== getOpositeDirection(this.direction)) {
             this.direction = newDirection;
         }
     }
 
-    checkCollision(gridSize: number): boolean {
+    checkCollision(gridSize) {
         const head = this.body[0];
         if (head.x < 0 || head.x >= gridSize || head.y < 0 || head.y >= gridSize) {
             return true;
@@ -60,7 +57,7 @@ export class Snake {
         return false;
     }
 
-    draw(ctx: CanvasRenderingContext2D): void {
+    draw(ctx) {
         ctx.fillStyle = "green";
         this.body.forEach((segment) => {
             ctx.fillRect(segment.x, segment.y, this.size, this.size);

@@ -1,11 +1,10 @@
-// פונקציה להגרלת מספר שלם בין בני ערכים
-import { Direction } from "../types";
+import { Direction } from "./types.js";
 
-export function getRandomInt(min: number, max: number): number {
+export function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min) + min)
 }
 
-export function getOpositeDirection(dir: Direction): Direction {
+export function getOpositeDirection(dir) {
     switch (dir) {
         case Direction.Right:
             return Direction.Left;
@@ -20,6 +19,3 @@ export function getOpositeDirection(dir: Direction): Direction {
             return Direction.Right;
     }
 }
-// checkCollision(gridSize: number):boolean{
-//     return false;
-// }

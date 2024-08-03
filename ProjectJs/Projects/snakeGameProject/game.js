@@ -1,45 +1,38 @@
-import { Direction } from "../types";
-import { Food } from "./Food";
-import { Snake } from "./Snake";
+import { Snake } from "./snake.js";
+import { Food } from "./food.js";
+import { Direction } from "./types.js";
+
 
 export class Game {
-    snake: Snake;
-    food: Food;
-    gameOver: boolean;
-    score: number;
-    gridSize: number;
-    canvas: HTMLCanvasElement;
-    ctx: CanvasRenderingContext2D;
-    intervalId: number | null;
-
-    constructor(canvas: HTMLCanvasElement, gridSize: number = 20) {
+    constructor(canvas, gridSize = 20) {
         this.canvas = canvas;
-        this.ctx = this.canvas.getContext("2d")!;
+        this.ctx = this.canvas.getContext("2d");
         this.gridSize = gridSize;
         this.gameOver = false;
         this.score = 0;
         this.intervalId = null;
-        let middle: number = this.gridSize ** 2 / 2;
+        let middle = this.gridSize ** 2 / 2;
         this.snake = new Snake({ x: middle, y: middle });
         this.food = new Food(gridSize, this.snake.body);
     }
 
-    start(): void {
+    start() {
         this.intervalId = setInterval(() => {
             this.update();
         }, 100); // Update every 100 milliseconds
     }
 
-    update(): void {
+    update() {
         if (this.gameOver) {
             if (this.intervalId) clearInterval(this.intervalId);
             console.log("Game Over!");
+            alert("Game Over!");
+            location.reload();
             return;
         }
 
         this.snake.move();
 
-        // Check if food is eaten
         if (
             this.snake.body[0].x === this.food.x &&
             this.snake.body[0].y === this.food.y
@@ -57,13 +50,13 @@ export class Game {
         this.draw();
     }
 
-    draw(): void {
+    draw() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         this.food.draw(this.ctx);
         this.snake.draw(this.ctx);
     }
 
-    handleInput(key: string): void {
+    handleInput(key) {
         console.log(key);
 
         switch (key) {
@@ -85,7 +78,7 @@ export class Game {
         }
     }
 
-    reset(): void {
+    reset() {
         this.gameOver = false;
         this.score = 0;
         this.snake = new Snake({ x: this.gridSize, y: this.gridSize });
