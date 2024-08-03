@@ -1,5 +1,4 @@
 @media screen and (max-width: 667px) {
-
     #countdown {
         position: absolute;
         left: 50%;
@@ -9,7 +8,7 @@
         transition: 1s;
         font-size: 0vw;
         opacity: 50%;
-        color: #040;
+        color: rgb(1, 46, 1);
         z-index: 3;
     }
 
@@ -21,6 +20,7 @@
         width: 100vw;
         background-color: #f0f0f0;
         font-family: "Arial", sans-serif;
+        margin: 0;
     }
 
     canvas {
@@ -31,6 +31,8 @@
         left: 7rem;
         top: -10rem;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+        /* Ensure canvas is below the arrows */
     }
 
     .containerForArrowDirections {
@@ -46,6 +48,13 @@
         z-index: 2;
     }
 
+    .up,
+    .down,
+    .left,
+    .right {
+        z-index: 9;
+    }
+
     .upAndDown {
         display: flex;
         flex-direction: column;
@@ -53,11 +62,14 @@
         margin-top: -8vh;
         font-size: 70px;
         width: 70vw;
-        gap: 1vh;
+        height: 40vh;
+        gap: 5vh;
+        position: relative;
     }
 
     .upAndDown>p.down {
         margin-top: -1vh;
+        position: relative;
     }
 
     .leftAndRight {
@@ -68,14 +80,13 @@
         gap: 0rem;
         font-size: 70px;
         position: relative;
-        top: -45vh;
+        top: -35vh;
         width: 70vw;
+        height: 40vh;
         gap: 8rem;
-
     }
 
     #app {
         position: relative;
-        z-index: 1;
     }
 }
