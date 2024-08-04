@@ -30,8 +30,8 @@ const timer = setInterval(() => {
 }, 1000);
 
 function startGame() {
-    canvas.width = 225;
-    canvas.height = 225;
+    canvas.width = 300;
+    canvas.height = 300;
     canvas.style.opacity = '1';
 
     const game = new Game(canvas, 20);
