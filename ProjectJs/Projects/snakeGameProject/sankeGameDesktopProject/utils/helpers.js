@@ -1,4 +1,4 @@
-import { Direction } from "./types.js";
+import { Direction } from "../types.js";
 
 export function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min) + min)

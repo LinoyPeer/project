@@ -1,6 +1,6 @@
 import { Snake } from "./snake.js";
 import { Food } from "./food.js";
-import { Direction } from "./types.js";
+import { Direction } from "../types.js";
 
 
 export class Game {
@@ -42,7 +42,6 @@ export class Game {
             this.score += 10;
         }
 
-        // Check for game over
         if (this.snake.checkCollision(this.gridSize * this.gridSize)) {
             this.gameOver = true;
         }

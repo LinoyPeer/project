@@ -1,4 +1,4 @@
-import { Game } from "./game.js";
+import { Game } from "./classes/game.js";
 
 let counterValue = 3;
 const countdown = document.getElementById('countdown');

@@ -1,4 +1,4 @@
-import { getRandomInt } from "./helpers.js";
+import { getRandomInt } from "../utils/helpers.js";
 
 export class Food {
     x = 0;

@@ -1,11 +1,11 @@
-import { Direction } from "./types.js";
-import { getOpositeDirection } from "./helpers.js";
+import { Direction } from "../types.js";
+import { getOpositeDirection } from "../utils/helpers.js";
 
 export class Snake {
     constructor(initialPosition) {
         this.body = [initialPosition];
         this.direction = Direction.Right;
-        this.size = Math.sqrt(300);
+        this.size = 20;
     }
 
     move() {
