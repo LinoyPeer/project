@@ -111,6 +111,7 @@
         }
 
 
+
         @media(max-width:767px) {
             hr {
                 width: 90%;
@@ -127,6 +128,51 @@
 
             .ulClass {
                 margin-right: -0.2em;
+            }
+
+
+            /* עיצוב התצוגה של ה-input כשהוא מוצג */
+            #fileInput1.show {
+                display: block;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: #d1c4e9;
+                /* צבע סגלגל בהיר */
+                border-radius: 10px;
+                padding: 20px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+                opacity: 1;
+
+            }
+
+            .closeBtn {
+                position: absolute;
+                top: 34rem;
+                right: 4rem;
+                cursor: pointer;
+                font-size: 24px;
+                color: #5f6368;
+                background: transparent;
+                border: none;
+                font-size: 25px;
+
+            }
+
+            /* עיצוב ה-input עצמו */
+            #fileInput1 {
+                font-size: 16px;
+                color: #333;
+                background-color: #f8d7ff7b;
+                border-radius: 8px;
+                padding: 10px;
+            }
+
+            #publishedBtn {
+                position: relative;
+                top: -22rem;
+                left: 5rem;
             }
 
         }
@@ -201,28 +247,76 @@
                 d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm40-80h480L570-480 450-320l-90-120-120 160Zm-40 80v-560 560Z" />
 
         </svg>
-        <input type="text" id="fileInput1" />
-        <input type="file" id="fileInput2" />
+
     </div>
 
     <div class="uploadPostParagraph">
         <p>Upload Status</p>
         <p>Upload Photo</p>
     </div>
+    <input placeholder="Write your status" type="text" id="fileInput1" />
+    <input type="file" id="fileInput2" />
     <img id="displayImage" src="" />
+    <button class="closeBtn" onclick="hideInput()">×</button>
+    <button id="publishedBtn">published</button>
 
+    <div id="statusApllied"></div>
     <script>
+        const closeBtn = document.querySelector('.closeBtn');
+        closeBtn.style.display = 'none';
+        const publishedBtn = document.getElementById('publishedBtn');
+        publishedBtn.style.display = 'none';
         const fileInputStatus = document.getElementById('fileInput1');
         const fileInputImg = document.getElementById('fileInput2');
         fileInputStatus.style.display = 'none';
         fileInputImg.style.display = 'none';
 
         const statusIcon = document.getElementById('uploudStatusIcon');
-        const imgIcon = document.getElementById('uploudImgIcon');
-        statusIcon.addEventListener('click', () => {
-            fileInput1.style.display = 'block';
+        let statusApllied = document.getElementById('statusApllied');
+        let statusAplliedChild = document.createElement('p');
+        statusApllied.appendChild(statusAplliedChild);
+
+        fileInputStatus.addEventListener('change', (e) => {
+            publishedBtn.addEventListener('click', () => {
+                if (e.target.value != "") {
+                    closeBtn.style.display = 'none';
+                    fileInputStatus.style.display = 'none';
+                    publishedBtn.style.display = 'none';
+
+                    console.log(e.target.value);
+                    statusAplliedChild.textContent = fileInputStatus.value;
+                    localStorage.setItem('statusSaver', statusAplliedChild.textContent);
+                    fileInputStatus.value = "";
+                }
+
+            })
+        })
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedStatus = localStorage.getItem('statusSaver');
+            if (savedStatus) {
+                statusAplliedChild.textContent = savedStatus;
+            }
         });
 
+
+
+
+        const imgIcon = document.getElementById('uploudImgIcon');
+        statusIcon.addEventListener('click', () => {
+            fileInputStatus.style.display = 'block';
+            fileInputStatus.style.marginTop = '5rem'
+            fileInputStatus.style.marginLeft = '5rem'
+            closeBtn.style.display = 'block';
+            publishedBtn.style.display = 'block';
+
+        });
+        closeBtn.addEventListener('click', () => {
+            closeBtn.style.display = 'none';
+            fileInputStatus.style.display = 'none';
+            publishedBtn.style.display = 'none';
+
+        })
         imgIcon.addEventListener('click', () => {
             fileInput2.click();
         });
