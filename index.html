@@ -41,12 +41,16 @@
         }
 
         img {
-            /*עיצוב הלוגו*/
             width: 6em;
-            padding-right: 40px;
             position: absolute;
             top: 6px;
         }
+
+        img[title="logo"] {
+            padding-right: 40px;
+
+        }
+
 
         .Logoname {
             top: 0rem;
@@ -264,6 +268,7 @@
             width: 200px;
             height: 150px;
             right: -1rem;
+
         }
 
 
@@ -382,6 +387,8 @@
             right: -1rem;
             border: none;
             border-radius: 5px;
+            margin-right: 40px;
+
         }
 
         .h1Js {
@@ -406,7 +413,6 @@
         }
 
         button.btnJs {
-            /*כפתור כניסה לפרויקטים*/
             position: relative;
             text-align: center;
             font-size: 12px;
@@ -640,6 +646,7 @@
                 position: relative;
                 width: 0px;
                 height: auto;
+                margin-right: 5vh;
             }
 
             .projects h1 {
@@ -673,7 +680,7 @@
 
             .projectsJs {
                 width: 60vw;
-                height: 60vw;
+                height: 70vw;
                 font-size: 0.4rem;
                 text-align: justify;
                 padding: 10px;
@@ -685,7 +692,7 @@
             img.imgPjs {
                 position: relative;
                 width: 100px;
-                height: 50px;
+                height: 80px;
                 right: -1rem;
                 border: none;
                 border-radius: 5px;
@@ -704,6 +711,7 @@
                 font-weight: 500;
                 line-height: 1.2;
                 margin-top: -0.5vh;
+
             }
 
             .gridProjects.littleAbouttMe.gridProjectsJs {
@@ -721,14 +729,13 @@
             }
 
             button.btnJs {
-                /*כפתור כניסה לפרויקטים*/
                 position: relative;
                 text-align: center;
                 font-size: 12px;
                 padding: 5px;
                 width: 120px;
                 height: 25px;
-                margin-top: -3vh;
+                margin-top: -8vh;
             }
 
 
@@ -817,7 +824,7 @@
 
 <body>
     <header>
-        <img src="projectImages/websitelogo.png" alt="logo">
+        <img src="projectImages/websitelogo.png" title="logo" alt="logo">
         <p class="Logoname">Linoy Pe'er</p>
         <span class="social">
             <a href="https://www.facebook.com/linoy.peer.56" class="fa fa-facebook" target="_blank"></a>
