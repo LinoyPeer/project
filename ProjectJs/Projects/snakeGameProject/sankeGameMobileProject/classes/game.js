@@ -42,7 +42,7 @@ export class Game {
             this.score += 10;
         }
 
-        if (this.snake.checkCollision(this.gridSize * this.gridSize)) {
+        if (this.snake.checkCollision(this.canvas.width)) {
             this.gameOver = true;
         }
 

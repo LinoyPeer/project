@@ -42,7 +42,7 @@ export class Snake {
 
     checkCollision(gridSize) {
         const head = this.body[0];
-        if (head.x < 0 || head.x >= gridSize || head.y < 0 || head.y >= gridSize) {
+        if (head.x < 0 || head.x + this.size > gridSize || head.y < 0 || head.y + this.size > gridSize) {
             return true;
         }
 
