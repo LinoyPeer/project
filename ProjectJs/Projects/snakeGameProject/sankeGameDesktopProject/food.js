@@ -1,8 +1,5 @@
 import { getRandomInt } from "./helpers.js";
 
-
-
-
 export class Food {
     x = 0;
     y = 0;

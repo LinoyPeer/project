@@ -1,5 +1,5 @@
-import { Direction } from "./types.js";
-import { getOpositeDirection } from "./helpers.js";
+import { Direction } from "../types.js";
+import { getOpositeDirection } from "../utils/helpers.js";
 
 export class Snake {
     constructor(initialPosition) {

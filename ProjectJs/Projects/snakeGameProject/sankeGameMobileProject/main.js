@@ -1,4 +1,4 @@
-import { Game } from "./game.js";
+import { Game } from "./classes/game.js";
 
 const canvas = document.getElementById("app");
 const directionsDiv = document.querySelector('.containerForArrowDirections');
@@ -30,8 +30,8 @@ const timer = setInterval(() => {
 }, 1000);
 
 function startGame() {
-    canvas.width = 300;
-    canvas.height = 300;
+    canvas.width = 225;
+    canvas.height = 225;
     canvas.style.opacity = '1';
 
     const game = new Game(canvas, 20);

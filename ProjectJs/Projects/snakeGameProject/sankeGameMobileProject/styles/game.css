@@ -32,7 +32,6 @@
         top: -10rem;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         z-index: 1;
-        /* Ensure canvas is below the arrows */
     }
 
     .containerForArrowDirections {

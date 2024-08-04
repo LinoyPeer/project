@@ -5,7 +5,7 @@ export class Snake {
     constructor(initialPosition) {
         this.body = [initialPosition];
         this.direction = Direction.Right;
-        this.size = 20;
+        this.size = Math.sqrt(300);
     }
 
     move() {

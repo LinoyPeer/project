@@ -148,7 +148,7 @@
                     const displayImg = document.getElementById('display-image');
                     displayImg.src = e.target.result;
 
-                    localStorage.setItem(('savedImage', e.target.result));
+                    localStorage.setItem('savedImage', e.target.result);
                 };
                 reader.readAsDataURL(file);
             }
